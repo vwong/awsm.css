@@ -1,20 +1,11 @@
 /* requires */
 
-var gulp		= require('gulp'),
-	util		= require('gulp-util'),
-	browserSync = require('browser-sync'),
-	cache 		= require('gulp-cached'),
-	fileinclude = require('gulp-file-include'),
-	rename		= require('gulp-rename'),
-	concat		= require('gulp-concat'),
-	filter 		= require('gulp-filter'),
-	rimraf		= require('rimraf'),
-
-	autoprefixr	= require('autoprefixer'),
-	nocomments	= require('postcss-discard-comments'),
-	sass		= require('gulp-sass'),
-	postcss 	= require('gulp-postcss'),
-	minifyCSS	= require('gulp-minify-css');
+var gulp	= require('gulp'),
+	bs		= require('browser-sync'),
+	$		= require('gulp-load-plugins')({
+		replaceString: /^gulp(-|\.)|postcss-/,
+		pattern: ['*']
+	});
 
 /* paths */
 
@@ -30,44 +21,60 @@ var input = {
 		images: 'example/images'
 	};
 
-gulp.task('default', ['build', 'server', 'watch']);
-
-gulp.task('build', ['markup', 'styles', 'images']);
+var errorHandler = function(title) {
+	return $.plumber({
+		errorHandler: $.notify.onError(function(err) {
+			return {
+				title: title  + ' (' + err.plugin + ')',
+				message: err.message
+			};
+		})
+	});
+} 
 
 gulp.task('markup', function() {
-	gulp.src(input.html)
-		.pipe(fileinclude().on('error', util.log))
-		.pipe(cache('htmling'))
-		.pipe(filter(['*', '!dev/example/includes']))
+	return gulp.src(input.html)
+		.pipe(errorHandler('Markup'))
+		
+		.pipe($.fileInclude())
+		.pipe($.cached('markup'))
+		.pipe($.filter(['*']))
 		.pipe(gulp.dest(output.main))
-		.pipe(browserSync.stream());
+		.pipe(bs.stream());
 });
 
 gulp.task('styles', function() {
-	gulp.src(input.scss)
-		.pipe(concat('awsm.scss'))
-		.pipe(sass().on('error', util.log))
+	return gulp.src(input.scss)
+		.pipe(errorHandler('Styles'))
+		
+		.pipe($.concat('awsm.scss'))
+		.pipe($.sass())
 
-		.pipe(postcss([ autoprefixr({ browsers: [ "> 1%" ] }), nocomments() ]))
+		.pipe($.postcss([
+			$.autoprefixer({ browsers: [ "> 1%" ] }),
+			$.discardComments()
+		]))
 		.pipe(gulp.dest(output.css))
 		.pipe(gulp.dest(output.dist))
 
-		.pipe(minifyCSS())
-		.pipe(rename('awsm.min.css'))
+		.pipe($.minifyCss())
+		.pipe($.rename('awsm.min.css'))
 		.pipe(gulp.dest(output.css))
 		.pipe(gulp.dest(output.dist))
 
-		.pipe(browserSync.stream());
+		.pipe(bs.stream());
 });
 
 gulp.task('images', function() {
-	gulp.src(input.images) 
+	return gulp.src(input.images) 
+		.pipe(errorHandler('Images'))
+
 		.pipe(gulp.dest(output.images))
-		.pipe(browserSync.stream());
+		.pipe(bs.stream());
 });
 
 gulp.task('server', function() {
-	browserSync.init({
+	bs.init({
 		server: output.main,
 		open: false,
 		browser: "browser",
@@ -76,11 +83,15 @@ gulp.task('server', function() {
 });
 
 gulp.task('watch', function() {
-	gulp.watch(input.html, ['markup']);
-	gulp.watch(input.scss, ['styles']);
-	gulp.watch(input.images, ['images']);
+	gulp.watch(input.html, gulp.series('markup'));
+	gulp.watch(input.scss, gulp.series('styles'));
+	gulp.watch(input.images, gulp.series('images'));
 });
 
 gulp.task('clean', function(cb) {
-	rimraf(output.main, cb);
+	return $.del(output.main);
 });
+
+gulp.task('build', gulp.series('markup', 'styles', 'images'));
+
+gulp.task('default', gulp.series('build', gulp.parallel('watch', 'server')));
