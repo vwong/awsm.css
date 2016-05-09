@@ -46,7 +46,7 @@
 			<h2>highlight.js & prism.js</h2>
 			<p>The best syntax highlight libraries. First of them has more themes, but sometimes second works better. Which one to use? Up to you.</p>
 			<p>Homepages: <a href="https://highlightjs.org/" title="highlight.js">highlightjs.org</a> & <a href="http://prismjs.com/" title="http://prism.js">prismjs.com</a>. Demo of prism.js you can see below.</p>
-			<pre><code class="language-scss">/* Create a border-triangle 
+			<pre style="padding: 0"><code class="language-scss">/* Create a border-triangle 
  * params:
  * 		$direction: [top, right, bottom, left]
  *		$size
@@ -95,6 +95,13 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/themes/prism-solarizedlight.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/prism.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/components/prism-scss.min.js"></script>
+
+	<style>
+		/* remove prism.js paddings */
+		pre[class*=language-] {
+			padding: 0;
+		}
+	</style>
 
 </body>
 </html>
