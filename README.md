@@ -1,6 +1,4 @@
-# awsm.css
-
-Simple CSS library for semantic HTML markup.
+![Headline](http://igoradamenko.com/github/awsm.css/headline.png) 
 
 ## Usage
 
@@ -13,6 +11,8 @@ Also don't forget to add viewport info to `<head>` section for adaptation to mob
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 ```
+
+And if you want to get beautiful fonts, add “PT Serif” from [Google Fonts](https://www.google.com/fonts/specimen/PT+Serif).
 
 ## Download
 
