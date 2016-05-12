@@ -1,6 +1,6 @@
 {
-  "name": "awsm",
-  "version": "1.0.0",
+  "name": "awsm.css",
+  "version": "1.2.1",
   "description": "Simple CSS lib for semantic responsive sites",
   "author": "Igor Adamenko",
   "devDependencies": {
