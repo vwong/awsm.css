@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="awsm.min.css">
 ```
 
-Also don't forget to add viewport info to `<head>` section for adaptation to mobile. Like this:
+Also don't forget to add viewport info to the `<head>` for adaptation to mobile. Like this:
 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
