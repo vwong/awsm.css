@@ -47,12 +47,12 @@ gulp.task('styles', function() {
 	return gulp.src(input.scss)
 		.pipe(errorHandler('Styles'))
 		
-		.pipe($.concat('awsm.scss'))
 		.pipe($.stylelint({
 	      reporters: [
 	        { formatter: 'string', console: true }
 	      ]
 	    }))
+		.pipe($.concat('awsm.scss'))
 		.pipe($.sass())
 
 		.pipe($.postcss([

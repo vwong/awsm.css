@@ -2,39 +2,44 @@
 @import 'variables';
 
 html {
-	color: color('text');
-	font-family: "PT Serif", Georgia, sans-serif;
+	font-family: 'PT Serif', Georgia, sans-serif;
 	font-size: 16px; // fallback
-	font-size: calc(16px + 0.25vw);
+	
+	/* stylelint-disable no-unsupported-browser-features */
+	font-size: calc(16px + .25vw);
+	/* stylelint-enable */
+	
 	line-height: 1.5;
+	color: color('text');
 }
 
 body {
 	margin: 1em;
-	
+
 	> header,
 	> main,
 	> footer,
 	> article {
+		display: block;
+		
 		position: relative;
 
-		display: block;
 		max-width: $content-size;
 		margin: 0 auto;
 	}
 
 	> header {
 		margin-bottom: 2.5em;
-		
+	
 		text-align: center;
 	}
 
 	> footer {
 		margin-top: 4em;
-		
-		color: color('invisible');
-		font-size: 0.9rem;
+	
 		text-align: center;
+		font-size: .9rem;
+		color: color('invisible');
 	}
 }
 
@@ -55,29 +60,32 @@ address {
 aside {
 	$side: 200px;
 	$width: $side * 3/4;
-	
+
 	position: absolute;
 	right: -$side;
-	
+
 	max-width: $width;
 	padding-right: 1em;
-	
-	color: color('disabled');
+
 	font-style: italic;
-	
+	color: color('disabled');
+
+	// tmp solution. see: https://github.com/stylelint/stylelint/issues/1754
+	/* stylelint-disable media-feature-no-missing-punctuation */
 	@media (max-width: $content-size + $side * 2) {
 		position: relative;
 		right: auto;
-		
+	
 		max-width: none;
 		padding: 0;
 	}
+	/* stylelint-enable */
 }
 
 a {
-	color: color('link');
 	text-decoration: none;
-	
+	color: color('link');
+
 	transition: color 300ms;
 
 	&:visited {
@@ -87,24 +95,24 @@ a {
 	&:hover,
 	&:focus {
 		color: color('link-hover');
-			
+		
 		transition: color 0ms;
 	}
 }
 
 nav {
 	margin: 2em 0;
-	
+
 	ul {
-		padding: 0;
-		margin: 0;
-		
 		list-style: none;
-		
+
+		margin: 0;
+		padding: 0;
+
 		li {
 			display: inline-block;
 			margin: 0 5px;
-			
+		
 			color: color('disabled');
 		}
 	}
@@ -122,61 +130,61 @@ nav {
 }
 
 h1 {
-	margin-top: 0.5em;
+	margin-top: .5em;
 	margin-bottom: 0;
 	  
-	color: color('accent');
 	font-size: 4rem;
 	font-weight: 400;
 	line-height: 1.2;
+	color: color('accent');
 }
 
 h2 {
 	margin-top: .8em;
 	margin-bottom: .5em;
-	
-	color: color('headers');
-	font-weight: 400;
+
 	font-size: 2.1rem;
+	font-weight: 400;
+	color: color('headers');
 }
 
 h3 {
 	margin-top: 1.2em;
 	margin-bottom: .5em;
-	
-	color: color('headers');
+
 	font-size: 1.4rem;
 	font-weight: 400;
+	color: color('headers');
 }
 
 h4 {
 	margin: 0 0 .5em;
-	
-	color: darken(color('disabled'), 10);
+
 	font-size: 1rem;
+	color: darken(color('disabled'), 10);
 }
 
 form {
 	max-width: 400px;
-	padding: 12px 10px;
 	margin: 0 auto;
+	padding: 12px 10px;
 }
 
 fieldset {
 	border: 1px solid darken(color('border'), 10);
-	
+
 	> p {
 		margin-top: 0;
 	}
 
 	p + p {
-		margin-bottom: 0.75em;
+		margin-bottom: .75em;
 	}
-} 
+}
 
 legend {
 	color: color('disabled');
-} 
+}
 
 button {
 	@include buttons;
@@ -184,7 +192,7 @@ button {
 
 select {
 	@include buttons;
-	
+
 	display: block;
 }
 
@@ -196,11 +204,11 @@ input {
 	&[type=search],
 	&[type=tel],
 	&[type=time],
-	&[type=month], 
-	&[type=week], 
+	&[type=month],
+	&[type=week],
 	&[type=url] {
 		@include inputs;
-		
+	
 		display: block;
 	}
 
@@ -208,14 +216,14 @@ input {
 	&[type=button],
 	&[type=reset] {
 		@include buttons;
-		
-		-webkit-appearance: none;
+	
+		appearance: none;
 	}
 
 	&[type=color],
 	&[type=file] {
 		@include buttons;
-		
+	
 		display: block;
 	}
 
@@ -226,7 +234,7 @@ input {
 
 	&[type=file] {
 		width: 100%;
-	} 
+	}
 }
 
 textarea {
@@ -237,24 +245,24 @@ pre {
 	@include code;
 
 	margin: 0;
-	
+
 	> code {
 		display: block;
+		overflow-x: auto;
 		padding: 10px 15px;
 
-		-webkit-overflow-scrolling: touch;
-		overflow-x: auto;
-
+		border: 0;
 		// for compatibility with syntax highlighters
 		background: transparent;
-		border: none; 
+
+		-webkit-overflow-scrolling: touch;
 	}
 }
 
 code {
 	@include code;
-	
-	padding: 0.06250em 0.31250em;
+
+	padding: .0625em .3125em;
 }
 
 img {
@@ -265,28 +273,28 @@ img {
 
 p {
 	margin: .5em 0;
-	
+
 	img {
 		float: right;
 		margin: .3em 0 .3em .5em;
-		
+	
 		border: 1px solid color('border');
 	}
 }
 
 figure {
-	box-sizing: border-box;
 	display: inline-block;
-	padding: 6px 22px;
+	box-sizing: border-box;
 	margin: .5em 0;
-	
+	padding: 6px 22px;
+
 	border: 1px solid color('border');
 	border-radius: 1px;
-	
+
 	img {
 		max-width: 100%;
 		margin: 10px 0 15px;
-		
+
 		+ figcaption {
 			margin-top: 0;
 			margin-bottom: 10px;
@@ -295,10 +303,10 @@ figure {
 
 	figcaption {
 		margin-top: 10px;
-		
-		font-style: italic;
+	
 		text-align: center;
-		
+		font-style: italic;
+
 		+ img {
 			margin: 15px 0 10px;
 		}
@@ -307,7 +315,7 @@ figure {
 
 dl {
 	margin: 1em 0 1.5em;
-	
+
 	dt {
 		font-weight: 700;
 	}
@@ -319,25 +327,25 @@ dl {
 
 details {
 	display: block;
-	padding: 0 .5em 0;
 	margin: 20px 0;
-	
+	padding: 0 .5em;
+
 	border: 1px solid color('border');
 	border-radius: 1px;
 	background-color: #fafafa;
-	
+
 	summary {
 		display: block;
-		padding: 0 .5em .1em;
-		margin: 0 -.5em 0;
-		
-		background-color: white;
 		outline: none;
-		
+		margin: 0 -.5em 0;
+		padding: 0 .5em .1em;
+	
 		font-weight: 700;
-		
+
+		background-color: #fff;
+
 		cursor: pointer;
-	} 
+	}
 }
 
 /*
@@ -346,55 +354,56 @@ details {
  * by David Bushell
 */
 table {
-	-webkit-overflow-scrolling: touch;
- 
 	display: inline-block;
-	max-width: 100%;
-	width: 100%;
-	overflow-x: auto;
-	vertical-align: top;
-	
-	background: radial-gradient(left, ellipse, rgba(0,0,0, .2) 0%, rgba(0,0,0, 0) 75%) 0 center,
-				radial-gradient(right, ellipse, rgba(0,0,0, .2) 0%, rgba(0,0,0, 0) 75%) 100% center;
-	background-size: 10px 100%, 10px 100%;
-	background-attachment: scroll, scroll;
-	background-repeat: no-repeat;
-	
+
 	border-spacing: 0;
 	border-collapse: collapse;
 
+	overflow-x: auto;
+	width: 100%;
+	max-width: 100%;
+
 	text-align: left;
+
+	vertical-align: top;
 	
+	background:
+		radial-gradient(left, ellipse, rgba(0, 0, 0, .2) 0%, rgba(0, 0, 0, 0) 75%) 0 center,
+		radial-gradient(right, ellipse, rgba(0, 0, 0, .2) 0%, rgba(0, 0, 0, 0) 75%) 100% center;
+	background-attachment: scroll, scroll;
+	background-size: 10px 100%, 10px 100%;
+	background-repeat: no-repeat;
+	
+	-webkit-overflow-scrolling: touch;
+
 	caption {
-		padding: 0.5em 0;
-		
-		background: #fff;
-		
-		font-style: italic;
-	}
+		padding: .5em 0;
 	
+		font-style: italic;
+
+		background: #fff;
+	}
+
 	thead {
 		background: color('border');
 	}
 
-	%td-th {
+	td, th {
 		padding: .3em .7em;
-		border: 1px solid color('border');
-		
 		vertical-align: top;
+	
+		border: 1px solid color('border');
 	}
 
 	td {
-		@extend %td-th;
-		
 		&:first-child {
-			background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
+			background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
 			background-size: 20px 100%;
 			background-repeat: no-repeat;
 		}
 
 		&:last-child {
-			background-image: linear-gradient(to left, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
+			background-image: linear-gradient(to left, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
 			background-position: 100% 0;
 			background-size: 20px 100%;
 			background-repeat: no-repeat;
@@ -402,21 +411,19 @@ table {
 	}
 
 	th {
-		@extend %td-th;
-		
 		border: 1px solid darken(color('border'), 10);
 	}
 }
 
 abbr {
-	margin-right: -0.15em;
-	
-	font-size: .875rem;
+	margin-right: -.15em;
+
 	letter-spacing: .15em;
+	font-size: .875rem;
 }
 
 dfn {
-	letter-spacing: 0.05em;
+	letter-spacing: .05em;
 }
 
 del {
@@ -424,9 +431,9 @@ del {
 }
 
 ins {
-	background: lighten(color('disabled'), 45);
-
 	text-decoration: none;
+
+	background: lighten(color('disabled'), 45);
 }
 
 mark {
@@ -435,10 +442,10 @@ mark {
 
 hr {
 	margin: 25px 0;
-	
+
 	border: 1px solid rgba(color('border'), .7);
-	border-bottom: none;
-} 
+	border-bottom: 0;
+}
 
 var {
 	font-family: monospace;
@@ -446,13 +453,13 @@ var {
 }
 
 audio {
-	width: 100%; 
+	width: 100%;
 	margin: 10px 0 15px;
 }
 
 video {
-	max-width: 100%;
 	width: 100%;
+	max-width: 100%;
 	margin: 10px 0 15px;
 }
 
@@ -462,12 +469,12 @@ noscript {
 
 kbd {
 	display: inline-block;
+	margin: 0 .4ex;
 	padding: 0 .6ex;
-	margin: 0 0.4ex;
-	
-	background: lighten(color('invisible'), 35);
+
 	border-radius: 5px;
 	box-shadow: 0 1px color('border');
+	background: lighten(color('invisible'), 35);
 }
 
 output {

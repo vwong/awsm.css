@@ -1,15 +1,15 @@
 @import 'variables';
 
 @mixin inputs-buttons {
+	outline: none;
 	box-sizing: border-box;
 	padding: .3em .5em;
-	
-	border: 1px solid darken(color('border'), 20);
-	outline: none;
 
-	font-size: 1em;
 	font-family: inherit;
-	
+	font-size: 1em;
+
+	border: 1px solid darken(color('border'), 20);
+
 	transition: border 200ms;
 }
 
@@ -18,9 +18,9 @@
 
 	display: block;
 	width: 100%;
-	
+
 	border-radius: 0;
-	
+
 	&:focus {
 		border: 1px solid darken(color('border'), 50);
 	}
@@ -28,32 +28,32 @@
 
 @mixin buttons {
 	@include inputs-buttons;
-	
+
 	display: inline-block;
-	
+
 	width: auto;
 	margin-bottom: 0;
-	
+
 	border-radius: 2px;
 	background: color('border');
-	
+
 	color: color('headers');
 
 	cursor: pointer;
-	
+
 	&:focus, &:hover {
 		border: 1px solid darken(color('border'), 50);
 		background: darken(color('border'), 15);
-		
+
 		color: color('accent');
 	}
 }
 
 @mixin code {
-	background: #f2f2f2;
+	font-family: Consolas, Courier, monospace;
+	font-size: .9em;
+
 	border: 1px solid color('border');
 	border-radius: 1px;
-	
-	font-size: 0.9em;
-	font-family: Consolas, Courier, monospace;
+	background: #f2f2f2;
 }
