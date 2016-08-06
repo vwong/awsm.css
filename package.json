@@ -4,7 +4,7 @@
   "description": "Simple CSS lib for semantic responsive sites",
   "author": "Igor Adamenko <mail@igoradamenko.com> (http://igoradamenko.com)",
   "devDependencies": {
-    "autoprefixer": "^6.3.3",
+    "autoprefixer": "^6.4.0",
     "browser-sync": "^2.7.12",
     "del": "^2.2.0",
     "gulp": "github:gulpjs/gulp#4.0",
