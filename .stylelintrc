@@ -332,7 +332,7 @@
 		"no-extra-semicolons": true,
 		"no-missing-end-of-source-newline": true,
 		"no-unsupported-browser-features": [true, {
-		  "browsers": "> 1%, not OperaMini < 8",
+		  "browsers": "> 1%, not OperaMini all",
 		  "severity": "warning",
 		  "ignore": ["css-appearance"]
 		}],
