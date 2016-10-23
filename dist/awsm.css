@@ -159,7 +159,7 @@ select{
     background:#c2c2c2;
     color:#070600; }
 
-input[type=text], input[type^=date], input[type=email], input[type=number], input[type=search], input[type=tel], input[type=time], input[type=month], input[type=week], input[type=url]{
+input[type=text], input[type=password], input[type^=date], input[type=email], input[type=number], input[type=search], input[type=tel], input[type=time], input[type=month], input[type=week], input[type=url]{
   outline:none;
   box-sizing:border-box;
   padding:.3em .5em;
@@ -172,7 +172,7 @@ input[type=text], input[type^=date], input[type=email], input[type=number], inpu
   width:100%;
   border-radius:0;
   display:block; }
-  input[type=text]:focus, input[type^=date]:focus, input[type=email]:focus, input[type=number]:focus, input[type=search]:focus, input[type=tel]:focus, input[type=time]:focus, input[type=month]:focus, input[type=week]:focus, input[type=url]:focus{
+  input[type=text]:focus, input[type=password]:focus, input[type^=date]:focus, input[type=email]:focus, input[type=number]:focus, input[type=search]:focus, input[type=tel]:focus, input[type=time]:focus, input[type=month]:focus, input[type=week]:focus, input[type=url]:focus{
     border:1px solid dimgray; }
 
 input[type=submit], input[type=button], input[type=reset]{
