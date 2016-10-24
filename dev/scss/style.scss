@@ -198,6 +198,7 @@ select {
 
 input {
 	&[type=text],
+	&[type=password],
 	&[type^=date],
 	&[type=email],
 	&[type=number],
