@@ -16,4 +16,9 @@ $colors: (
 }
 
 /* sizes */
-$content-size: 666px;
+$content-size: 30rem;
+$scale-small-font: 16px;
+$scale-large-font: 20px;
+$scale-start-width: 336px; // 16px * 21rem, approx 49 characters
+$scale-end-width: 600px; // 20px * 30rem, approx 71 characters
+$baseline: 1.2rem;

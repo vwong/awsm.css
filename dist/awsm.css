@@ -1,22 +1,26 @@
 html{
   font-family:'PT Serif', Georgia, sans-serif;
   font-size:16px;
-  font-size:calc(16px + .25vw);
-  line-height:1.5;
+  line-height:1.2;
   color:#111; }
+  @media (min-width: 336px){
+    html{
+      font-size:calc(16px + (20 - 16) * (100vw - 336px) / (600 - 336)); } }
+  @media (min-width: 600px){
+    html{
+      font-size:20px; } }
 
 body{
-  margin:1em; }
+  margin:1.2rem; }
   body > header,
   body > main,
   body > footer,
   body > article{
     display:block;
     position:relative;
-    max-width:666px;
+    max-width:30rem;
     margin:0 auto; }
   body > header{
-    margin-bottom:2.5em;
     text-align:center; }
   body > footer{
     margin-top:4em;
@@ -24,11 +28,8 @@ body{
     font-size:.9rem;
     color:#a3a39b; }
 
-header p{
-  font-size:1.125rem; }
-
 section, article{
-  margin-bottom:4em; }
+  margin-bottom:2.4rem; }
 
 address{
   font-style:normal; }
@@ -37,15 +38,18 @@ aside{
   position:absolute;
   right:-200px;
   max-width:150px;
-  padding-right:1em;
+  margin:0;
+  padding:0.7rem 0 0.5rem;
+  font-weight:400;
   font-style:italic;
   color:#7d7d77; }
-  @media (max-width: 1066px){
+  @media (max-width: 1040px){
     aside{
       position:relative;
       right:auto;
       max-width:none;
-      padding:0; } }
+      margin:0;
+      padding:0.7rem 0 0.5rem; } }
 
 a{
   text-decoration:none;
@@ -60,14 +64,14 @@ a{
     transition:color 0ms; }
 
 nav{
-  margin:2em 0; }
+  padding:1.8rem 0; }
   nav ul{
     list-style:none;
     margin:0;
     padding:0; }
     nav ul li{
       display:inline-block;
-      margin:0 5px;
+      margin:0 .5rem;
       color:#7d7d77; }
   nav a:visited{
     color:#0064c1; }
@@ -75,43 +79,44 @@ nav{
     color:#3000c1; }
 
 h1{
-  margin-top:.5em;
-  margin-bottom:0;
+  margin:0;
+  padding:0.77rem 0 0.43rem;
   font-size:4rem;
   font-weight:400;
-  line-height:1.2;
+  line-height:3.6rem;
   color:#070600; }
 
 h2{
-  margin-top:.8em;
-  margin-bottom:.5em;
-  font-size:2.1rem;
+  margin:0;
+  padding:0.73rem 0 0.47rem;
+  font-size:2.5rem;
   font-weight:400;
+  line-height:2.4rem;
   color:#25291c; }
 
 h3{
-  margin-top:1.2em;
-  margin-bottom:.5em;
-  font-size:1.4rem;
+  margin:0;
+  padding:0.79rem 0 0.41rem;
+  margin-top:0.6rem;
+  font-size:1.5rem;
   font-weight:400;
+  line-height:1.8rem;
   color:#25291c; }
 
 h4{
-  margin:0 0 .5em;
+  margin:0;
+  padding:0.7rem 0 0.5rem;
   font-size:1rem;
+  font-weight:bold;
+  line-height:1.2rem;
   color:#63635e; }
 
 form{
-  max-width:400px;
-  margin:0 auto;
-  padding:12px 10px; }
+  max-width:25rem;
+  margin:0 auto; }
 
 fieldset{
   border:1px solid #cfcfcf; }
-  fieldset > p{
-    margin-top:0; }
-  fieldset p + p{
-    margin-bottom:.75em; }
 
 legend{
   color:#7d7d77; }
@@ -272,7 +277,8 @@ img{
   margin:0 auto; }
 
 p{
-  margin:.5em 0; }
+  margin:0;
+  padding:0.7rem 0 0.5rem; }
   p img{
     float:right;
     margin:.3em 0 .3em .5em;
@@ -298,12 +304,19 @@ figure{
     figure figcaption + img{
       margin:15px 0 10px; }
 
-dl{
-  margin:1em 0 1.5em; }
-  dl dt{
-    font-weight:700; }
-  dl dd{
-    margin-bottom:1em; }
+blockquote{
+  margin:0 2em;
+  padding-top:-.1em; }
+
+ul, ol, dl{
+  margin:0;
+  padding:0.7rem 0 0.5rem; }
+
+dl dt{
+  font-weight:700; }
+
+dl dd{
+  margin-bottom:1.2rem; }
 
 details{
   display:block;
@@ -336,15 +349,15 @@ table{
   background-repeat:no-repeat;
   -webkit-overflow-scrolling:touch; }
   table caption{
-    padding:.5em 0;
+    padding:0.6rem 0;
     font-style:italic;
     background:#fff; }
   table thead{
     background:#e8e8e8; }
   table td, table th{
-    padding:.3em .7em;
+    padding:0.5375rem 0.7em 0.6rem;
     vertical-align:top;
-    border:1px solid #e8e8e8; }
+    border:0.0625rem solid #e8e8e8; }
   table td:first-child{
     background-image:-webkit-linear-gradient(left, white 50%, rgba(255, 255, 255, 0) 100%);
     background-image:linear-gradient(to right, white 50%, rgba(255, 255, 255, 0) 100%);
@@ -357,7 +370,7 @@ table{
     background-size:20px 100%;
     background-repeat:no-repeat; }
   table th{
-    border:1px solid #cfcfcf; }
+    border:0.0625rem solid #cfcfcf; }
 
 abbr{
   margin-right:-.15em;
@@ -376,11 +389,6 @@ ins{
 
 mark{
   background:#ffeab9; }
-
-hr{
-  margin:25px 0;
-  border:1px solid rgba(232, 232, 232, 0.7);
-  border-bottom:0; }
 
 var{
   font-family:monospace;

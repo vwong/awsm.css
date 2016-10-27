@@ -3,54 +3,48 @@
 
 html {
 	font-family: 'PT Serif', Georgia, sans-serif;
-	font-size: 16px; // fallback
-	
-	/* stylelint-disable no-unsupported-browser-features */
-	font-size: calc(16px + .25vw);
-	/* stylelint-enable */
-	
-	line-height: 1.5;
+	font-size: $scale-small-font; // fallback
+	line-height: 1.2;
 	color: color('text');
+
+	@media (min-width: $scale-start-width) {
+		/* stylelint-disable no-unsupported-browser-features */
+		font-size: calc(16px + (20 - 16) * (100vw - 336px) / (600 - 336));
+		/* stylelint-enable */
+	}
+
+	@media (min-width: $scale-end-width) {
+		font-size: $scale-large-font;
+	}
 }
 
 body {
-	margin: 1em;
+	margin: $baseline;
 
 	> header,
 	> main,
 	> footer,
 	> article {
 		display: block;
-		
 		position: relative;
-
 		max-width: $content-size;
 		margin: 0 auto;
 	}
 
 	> header {
-		margin-bottom: 2.5em;
-	
 		text-align: center;
 	}
 
 	> footer {
 		margin-top: 4em;
-	
 		text-align: center;
 		font-size: .9rem;
 		color: color('invisible');
 	}
 }
 
-header {
-	p {
-		font-size: 1.125rem;
-	}
-}
-
 section, article {
-	margin-bottom: 4em;
+	margin-bottom: $baseline*2;
 }
 
 address {
@@ -59,25 +53,23 @@ address {
 
 aside {
 	$side: 200px;
-	$width: $side * 3/4;
-
+	$width: $side * 3/4; // 20px * 7.5em, approx 15 characters
 	position: absolute;
 	right: -$side;
-
 	max-width: $width;
-	padding-right: 1em;
 
+	@include baseline(.5rem);
+	font-weight: 400;
 	font-style: italic;
 	color: color('disabled');
 
 	// tmp solution. see: https://github.com/stylelint/stylelint/issues/1754
 	/* stylelint-disable media-feature-no-missing-punctuation */
-	@media (max-width: $content-size + $side * 2) {
+	@media (max-width: $scale-end-width + $side * 2 + 40px) {
 		position: relative;
 		right: auto;
-	
 		max-width: none;
-		padding: 0;
+		@include baseline(.5rem);
 	}
 	/* stylelint-enable */
 }
@@ -85,7 +77,6 @@ aside {
 a {
 	text-decoration: none;
 	color: color('link');
-
 	transition: color 300ms;
 
 	&:visited {
@@ -95,24 +86,21 @@ a {
 	&:hover,
 	&:focus {
 		color: color('link-hover');
-		
 		transition: color 0ms;
 	}
 }
 
 nav {
-	margin: 2em 0;
+	padding: $baseline*1.5 0;
 
 	ul {
 		list-style: none;
-
 		margin: 0;
 		padding: 0;
 
 		li {
 			display: inline-block;
-			margin: 0 5px;
-		
+			margin: 0 .5rem;
 			color: color('disabled');
 		}
 	}
@@ -130,56 +118,45 @@ nav {
 }
 
 h1 {
-	margin-top: .5em;
-	margin-bottom: 0;
-	  
+	@include baseline(.43rem);
 	font-size: 4rem;
 	font-weight: 400;
-	line-height: 1.2;
+	line-height: $baseline*3;
 	color: color('accent');
 }
 
 h2 {
-	margin-top: .8em;
-	margin-bottom: .5em;
-
-	font-size: 2.1rem;
+	@include baseline(.47rem);
+	font-size: 2.5rem;
 	font-weight: 400;
+	line-height: $baseline*2;
 	color: color('headers');
 }
 
 h3 {
-	margin-top: 1.2em;
-	margin-bottom: .5em;
-
-	font-size: 1.4rem;
+	@include baseline(.41rem);
+	margin-top: $baseline/2;
+	font-size: 1.5rem;
 	font-weight: 400;
+	line-height: $baseline*1.5;
 	color: color('headers');
 }
 
 h4 {
-	margin: 0 0 .5em;
-
+	@include baseline(.5rem);
 	font-size: 1rem;
+	font-weight: bold;
+	line-height: $baseline;
 	color: darken(color('disabled'), 10);
 }
 
 form {
-	max-width: 400px;
+	max-width: 25rem;
 	margin: 0 auto;
-	padding: 12px 10px;
 }
 
 fieldset {
 	border: 1px solid darken(color('border'), 10);
-
-	> p {
-		margin-top: 0;
-	}
-
-	p + p {
-		margin-bottom: .75em;
-	}
 }
 
 legend {
@@ -209,7 +186,6 @@ input {
 	&[type=week],
 	&[type=url] {
 		@include inputs;
-	
 		display: block;
 	}
 
@@ -217,14 +193,12 @@ input {
 	&[type=button],
 	&[type=reset] {
 		@include buttons;
-	
 		appearance: none;
 	}
 
 	&[type=color],
 	&[type=file] {
 		@include buttons;
-	
 		display: block;
 	}
 
@@ -251,18 +225,15 @@ pre {
 		display: block;
 		overflow-x: auto;
 		padding: 10px 15px;
-
 		border: 0;
 		// for compatibility with syntax highlighters
 		background: transparent;
-
 		-webkit-overflow-scrolling: touch;
 	}
 }
 
 code {
 	@include code;
-
 	padding: .0625em .3125em;
 }
 
@@ -273,12 +244,11 @@ img {
 }
 
 p {
-	margin: .5em 0;
+	@include baseline(.5rem);
 
 	img {
 		float: right;
 		margin: .3em 0 .3em .5em;
-	
 		border: 1px solid color('border');
 	}
 }
@@ -288,7 +258,6 @@ figure {
 	box-sizing: border-box;
 	margin: .5em 0;
 	padding: 6px 22px;
-
 	border: 1px solid color('border');
 	border-radius: 1px;
 
@@ -304,7 +273,6 @@ figure {
 
 	figcaption {
 		margin-top: 10px;
-	
 		text-align: center;
 		font-style: italic;
 
@@ -314,15 +282,22 @@ figure {
 	}
 }
 
-dl {
-	margin: 1em 0 1.5em;
+blockquote {
+	margin: 0 2em;
+	padding-top: -.1em;
+}
 
+ul, ol, dl {
+	@include baseline(.5rem);
+}
+
+dl {
 	dt {
 		font-weight: 700;
 	}
 
 	dd {
-		margin-bottom: 1em;
+		margin-bottom: $baseline;
 	}
 }
 
@@ -330,7 +305,6 @@ details {
 	display: block;
 	margin: 20px 0;
 	padding: 0 .5em;
-
 	border: 1px solid color('border');
 	border-radius: 1px;
 	background-color: #fafafa;
@@ -340,11 +314,8 @@ details {
 		outline: none;
 		margin: 0 -.5em 0;
 		padding: 0 .5em .1em;
-	
 		font-weight: 700;
-
 		background-color: #fff;
-
 		cursor: pointer;
 	}
 }
@@ -356,32 +327,24 @@ details {
 */
 table {
 	display: inline-block;
-
 	border-spacing: 0;
 	border-collapse: collapse;
-
 	overflow-x: auto;
 	width: 100%;
 	max-width: 100%;
-
 	text-align: left;
-
 	vertical-align: top;
-	
 	background:
 		radial-gradient(left, ellipse, rgba(0, 0, 0, .2) 0%, rgba(0, 0, 0, 0) 75%) 0 center,
 		radial-gradient(right, ellipse, rgba(0, 0, 0, .2) 0%, rgba(0, 0, 0, 0) 75%) 100% center;
 	background-attachment: scroll, scroll;
 	background-size: 10px 100%, 10px 100%;
 	background-repeat: no-repeat;
-	
 	-webkit-overflow-scrolling: touch;
 
 	caption {
-		padding: .5em 0;
-	
+		padding: $baseline/2 0;
 		font-style: italic;
-
 		background: #fff;
 	}
 
@@ -390,10 +353,9 @@ table {
 	}
 
 	td, th {
-		padding: .3em .7em;
+		padding: #{$baseline/2 - .0625rem} .7em #{$baseline/2};
 		vertical-align: top;
-	
-		border: 1px solid color('border');
+		border: .0625rem solid color('border');
 	}
 
 	td {
@@ -412,13 +374,12 @@ table {
 	}
 
 	th {
-		border: 1px solid darken(color('border'), 10);
+		border: .0625rem solid darken(color('border'), 10);
 	}
 }
 
 abbr {
 	margin-right: -.15em;
-
 	letter-spacing: .15em;
 	font-size: .875rem;
 }
@@ -433,19 +394,11 @@ del {
 
 ins {
 	text-decoration: none;
-
 	background: lighten(color('disabled'), 45);
 }
 
 mark {
 	background: #ffeab9;
-}
-
-hr {
-	margin: 25px 0;
-
-	border: 1px solid rgba(color('border'), .7);
-	border-bottom: 0;
 }
 
 var {
@@ -472,7 +425,6 @@ kbd {
 	display: inline-block;
 	margin: 0 .4ex;
 	padding: 0 .6ex;
-
 	border-radius: 5px;
 	box-shadow: 0 1px color('border');
 	background: lighten(color('invisible'), 35);
