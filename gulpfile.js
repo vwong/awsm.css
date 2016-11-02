@@ -10,7 +10,7 @@ var gulp	= require('gulp'),
 /* paths */
 
 var input = {
-		html: 'dev/example/**/*.html',
+		html: ['dev/example/**/*.html', '!dev/example/includes/*.html'] ,
 		scss: 'dev/scss/**/*.scss',
 		images: 'dev/example/images/*'
 	},
@@ -38,7 +38,6 @@ gulp.task('markup', function() {
 		
 		.pipe($.fileInclude())
 		.pipe($.cached('markup'))
-		.pipe($.filter(['*']))
 		.pipe(gulp.dest(output.main))
 		.pipe(bs.stream());
 });
