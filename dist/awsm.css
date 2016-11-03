@@ -349,15 +349,16 @@ table{
   background-repeat:no-repeat;
   -webkit-overflow-scrolling:touch; }
   table caption{
-    padding:0.6rem 0;
+    margin:0;
+    padding:0.7rem 0 0.5rem;
     font-style:italic;
     background:#fff; }
   table thead{
     background:#e8e8e8; }
   table td, table th{
-    padding:0.5375rem 0.7em 0.6rem;
+    padding:calc(1.2rem - .5rem - 1px) 0.7em 0.5rem;
     vertical-align:top;
-    border:0.0625rem solid #e8e8e8; }
+    border:1px solid #e8e8e8; }
   table td:first-child{
     background-image:-webkit-linear-gradient(left, white 50%, rgba(255, 255, 255, 0) 100%);
     background-image:linear-gradient(to right, white 50%, rgba(255, 255, 255, 0) 100%);

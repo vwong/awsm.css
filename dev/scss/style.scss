@@ -343,7 +343,7 @@ table {
 	-webkit-overflow-scrolling: touch;
 
 	caption {
-		padding: $baseline/2 0;
+		@include baseline(.5rem);
 		font-style: italic;
 		background: #fff;
 	}
@@ -353,9 +353,11 @@ table {
 	}
 
 	td, th {
-		padding: #{$baseline/2 - .0625rem} .7em #{$baseline/2};
+		/* stylelint-disable no-unsupported-browser-features */
+		padding: calc(#{$baseline} - .5rem - 1px) .7em .5rem;
+		/* stylelint-enable */
 		vertical-align: top;
-		border: .0625rem solid color('border');
+		border: 1px solid color('border');
 	}
 
 	td {
