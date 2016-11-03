@@ -3,7 +3,10 @@
 @mixin inputs-buttons {
 	outline: none;
 	box-sizing: border-box;
-	padding: .3em .5em;
+	height: $baseline*2;
+	/* stylelint-disable no-unsupported-browser-features */
+	padding: calc(.5em - 1px) .5em;
+	/* stylelint-enable */
 	font-family: inherit;
 	font-size: 1em;
 	border: 1px solid darken(color('border'), 20);
@@ -25,6 +28,7 @@
 	@include inputs-buttons;
 	display: inline-block;
 	width: auto;
+	height: $baseline*2;
 	margin-bottom: 0;
 	border-radius: 2px;
 	background: color('border');

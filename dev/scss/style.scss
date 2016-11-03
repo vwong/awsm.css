@@ -156,7 +156,15 @@ form {
 }
 
 fieldset {
+	margin: 0;
+	/* stylelint-disable no-unsupported-browser-features */
+	padding: calc(#{$baseline} - 1px);
+	/* stylelint-enable */
 	border: 1px solid darken(color('border'), 10);
+}
+
+label {
+	display: block;
 }
 
 legend {
@@ -214,6 +222,7 @@ input {
 
 textarea {
 	@include inputs;
+	height: $baseline*4;
 }
 
 pre {

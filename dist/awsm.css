@@ -116,7 +116,12 @@ form{
   margin:0 auto; }
 
 fieldset{
+  margin:0;
+  padding:calc(1.2rem - 1px);
   border:1px solid #cfcfcf; }
+
+label{
+  display:block; }
 
 legend{
   color:#7d7d77; }
@@ -124,7 +129,8 @@ legend{
 button{
   outline:none;
   box-sizing:border-box;
-  padding:.3em .5em;
+  height:2.4rem;
+  padding:calc(.5em - 1px) 0.5em;
   font-family:inherit;
   font-size:1em;
   border:1px solid #b5b5b5;
@@ -132,6 +138,7 @@ button{
   transition:border 200ms;
   display:inline-block;
   width:auto;
+  height:2.4rem;
   margin-bottom:0;
   border-radius:2px;
   background:#e8e8e8;
@@ -145,7 +152,8 @@ button{
 select{
   outline:none;
   box-sizing:border-box;
-  padding:.3em .5em;
+  height:2.4rem;
+  padding:calc(.5em - 1px) 0.5em;
   font-family:inherit;
   font-size:1em;
   border:1px solid #b5b5b5;
@@ -153,6 +161,7 @@ select{
   transition:border 200ms;
   display:inline-block;
   width:auto;
+  height:2.4rem;
   margin-bottom:0;
   border-radius:2px;
   background:#e8e8e8;
@@ -167,7 +176,8 @@ select{
 input[type=text], input[type=password], input[type^=date], input[type=email], input[type=number], input[type=search], input[type=tel], input[type=time], input[type=month], input[type=week], input[type=url]{
   outline:none;
   box-sizing:border-box;
-  padding:.3em .5em;
+  height:2.4rem;
+  padding:calc(.5em - 1px) 0.5em;
   font-family:inherit;
   font-size:1em;
   border:1px solid #b5b5b5;
@@ -183,7 +193,8 @@ input[type=text], input[type=password], input[type^=date], input[type=email], in
 input[type=submit], input[type=button], input[type=reset]{
   outline:none;
   box-sizing:border-box;
-  padding:.3em .5em;
+  height:2.4rem;
+  padding:calc(.5em - 1px) 0.5em;
   font-family:inherit;
   font-size:1em;
   border:1px solid #b5b5b5;
@@ -191,6 +202,7 @@ input[type=submit], input[type=button], input[type=reset]{
   transition:border 200ms;
   display:inline-block;
   width:auto;
+  height:2.4rem;
   margin-bottom:0;
   border-radius:2px;
   background:#e8e8e8;
@@ -207,7 +219,8 @@ input[type=submit], input[type=button], input[type=reset]{
 input[type=color], input[type=file]{
   outline:none;
   box-sizing:border-box;
-  padding:.3em .5em;
+  height:2.4rem;
+  padding:calc(.5em - 1px) 0.5em;
   font-family:inherit;
   font-size:1em;
   border:1px solid #b5b5b5;
@@ -215,6 +228,7 @@ input[type=color], input[type=file]{
   transition:border 200ms;
   display:inline-block;
   width:auto;
+  height:2.4rem;
   margin-bottom:0;
   border-radius:2px;
   background:#e8e8e8;
@@ -236,7 +250,8 @@ input[type=file]{
 textarea{
   outline:none;
   box-sizing:border-box;
-  padding:.3em .5em;
+  height:2.4rem;
+  padding:calc(.5em - 1px) 0.5em;
   font-family:inherit;
   font-size:1em;
   border:1px solid #b5b5b5;
@@ -244,7 +259,8 @@ textarea{
   transition:border 200ms;
   display:block;
   width:100%;
-  border-radius:0; }
+  border-radius:0;
+  height:4.8rem; }
   textarea:focus{
     border:1px solid dimgray; }
 
