@@ -3,9 +3,10 @@
 @mixin inputs-buttons {
 	outline: none;
 	box-sizing: border-box;
-	height: $baseline*2;
+	height: $baseline*1.5;
+	margin-bottom: $baseline*.5;
 	/* stylelint-disable no-unsupported-browser-features */
-	padding: calc(.5em - 1px) .5em;
+	padding: calc(.25em - 1px) .5em;
 	/* stylelint-enable */
 	font-family: inherit;
 	font-size: 1em;
@@ -28,8 +29,8 @@
 	@include inputs-buttons;
 	display: inline-block;
 	width: auto;
-	height: $baseline*2;
-	margin-bottom: 0;
+	height: $baseline*1.5;
+	margin-bottom: $baseline*.5;
 	border-radius: 2px;
 	background: color('border');
 	color: color('headers');

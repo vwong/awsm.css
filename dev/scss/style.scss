@@ -4,7 +4,7 @@
 html {
 	font-family: 'PT Serif', Georgia, sans-serif;
 	font-size: $scale-small-font; // fallback
-	line-height: 1.2;
+	line-height: 1.4;
 	color: color('text');
 
 	@media (min-width: $scale-start-width) {
@@ -58,7 +58,7 @@ aside {
 	right: -$side;
 	max-width: $width;
 
-	@include baseline(.5rem);
+	@include baseline(.6rem);
 	font-weight: 400;
 	font-style: italic;
 	color: color('disabled');
@@ -69,7 +69,7 @@ aside {
 		position: relative;
 		right: auto;
 		max-width: none;
-		@include baseline(.5rem);
+		@include baseline(.6rem);
 	}
 	/* stylelint-enable */
 }
@@ -118,7 +118,7 @@ nav {
 }
 
 h1 {
-	@include baseline(.43rem);
+	@include baseline(.36rem);
 	font-size: 4rem;
 	font-weight: 400;
 	line-height: $baseline*3;
@@ -134,7 +134,7 @@ h2 {
 }
 
 h3 {
-	@include baseline(.41rem);
+	@include baseline(.46rem);
 	margin-top: $baseline/2;
 	font-size: 1.5rem;
 	font-weight: 400;
@@ -143,7 +143,7 @@ h3 {
 }
 
 h4 {
-	@include baseline(.5rem);
+	@include baseline(.62rem);
 	font-size: 1rem;
 	font-weight: bold;
 	line-height: $baseline;
@@ -222,7 +222,8 @@ input {
 
 textarea {
 	@include inputs;
-	height: $baseline*4;
+	height: $baseline*3.5;
+	margin-bottom: $baseline*.5;
 }
 
 pre {
@@ -253,7 +254,7 @@ img {
 }
 
 p {
-	@include baseline(.5rem);
+	@include baseline(.62rem);
 
 	img {
 		float: right;
@@ -297,16 +298,13 @@ blockquote {
 }
 
 ul, ol, dl {
-	@include baseline(.5rem);
+	@include baseline(.58rem);
+	margin-left: 1em;
 }
 
 dl {
 	dt {
 		font-weight: 700;
-	}
-
-	dd {
-		margin-bottom: $baseline;
 	}
 }
 
@@ -352,7 +350,7 @@ table {
 	-webkit-overflow-scrolling: touch;
 
 	caption {
-		@include baseline(.5rem);
+		@include baseline(.6rem);
 		font-style: italic;
 		background: #fff;
 	}
@@ -363,7 +361,7 @@ table {
 
 	td, th {
 		/* stylelint-disable no-unsupported-browser-features */
-		padding: calc(#{$baseline} - .5rem - 1px) .7em .5rem;
+		padding: calc(#{$baseline} - .6rem - 1px) .7em .6rem;
 		/* stylelint-enable */
 		vertical-align: top;
 		border: 1px solid color('border');
@@ -412,6 +410,16 @@ mark {
 	background: #ffeab9;
 }
 
+hr {
+	height: 1px;
+	/* stylelint-disable no-unsupported-browser-features */
+	margin: calc(#{$baseline} - 1px) 0 0;
+	/* stylelint-enable */
+	border: 0;
+	background: #333;
+	background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
 var {
 	font-family: monospace;
 	font-style: normal;
@@ -434,8 +442,9 @@ noscript {
 
 kbd {
 	display: inline-block;
-	margin: 0 .4ex;
+	margin: 0;
 	padding: 0 .6ex;
+	font-size: .9em;
 	border-radius: 5px;
 	box-shadow: 0 1px color('border');
 	background: lighten(color('invisible'), 35);
