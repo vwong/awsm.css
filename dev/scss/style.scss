@@ -380,6 +380,13 @@ table {
 			background-size: 20px 100%;
 			background-repeat: no-repeat;
 		}
+
+		&:only-child {
+			background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%), linear-gradient(to left, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+			background-position: 0 0, 100% 0;
+			background-size: 20px 100%, 20px 100%;
+			background-repeat: no-repeat, no-repeat;
+		}
 	}
 
 	th {

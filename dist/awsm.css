@@ -391,6 +391,12 @@ table{
     background-position:100% 0;
     background-size:20px 100%;
     background-repeat:no-repeat; }
+  table td:only-child{
+    background-image:-webkit-linear-gradient(left, white 50%, rgba(255, 255, 255, 0) 100%), -webkit-linear-gradient(right, white 50%, rgba(255, 255, 255, 0) 100%);
+    background-image:linear-gradient(to right, white 50%, rgba(255, 255, 255, 0) 100%), linear-gradient(to left, white 50%, rgba(255, 255, 255, 0) 100%);
+    background-position:0 0, 100% 0;
+    background-size:20px 100%, 20px 100%;
+    background-repeat:no-repeat, no-repeat; }
   table th{
     border:0.0625rem solid #cfcfcf; }
 
