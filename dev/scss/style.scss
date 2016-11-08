@@ -44,6 +44,7 @@ body {
 }
 
 section, article {
+	margin-top: $baseline;
 	margin-bottom: $baseline*2;
 }
 
@@ -91,7 +92,7 @@ a {
 }
 
 nav {
-	padding: $baseline*1.5 0;
+	padding: $baseline*.5 0;
 
 	ul {
 		list-style: none;
@@ -177,7 +178,6 @@ button {
 
 select {
 	@include buttons;
-
 	display: block;
 }
 
@@ -228,7 +228,6 @@ textarea {
 
 pre {
 	@include code;
-
 	margin: 0;
 
 	> code {
@@ -258,7 +257,7 @@ p {
 
 	img {
 		float: right;
-		margin: .3em 0 .3em .5em;
+		margin: .25em 0 .25em .5em;
 		border: 1px solid color('border');
 	}
 }
@@ -267,27 +266,29 @@ figure {
 	display: inline-block;
 	box-sizing: border-box;
 	margin: .5em 0;
-	padding: 6px 22px;
+	/* stylelint-disable no-unsupported-browser-features */
+	padding: calc(.25em - 1px) 1em;
+	/* stylelint-enable */
 	border: 1px solid color('border');
 	border-radius: 1px;
 
 	img {
 		max-width: 100%;
-		margin: 10px 0 15px;
+		margin: .5em 0;
 
 		+ figcaption {
 			margin-top: 0;
-			margin-bottom: 10px;
+			margin-bottom: .5em;
 		}
 	}
 
 	figcaption {
-		margin-top: 10px;
+		margin-top: .5em;
 		text-align: center;
 		font-style: italic;
 
 		+ img {
-			margin: 15px 0 10px;
+			margin: .5em 0;
 		}
 	}
 }
@@ -310,8 +311,10 @@ dl {
 
 details {
 	display: block;
-	margin: 20px 0;
-	padding: 0 .5em;
+	margin: 0;
+	/* stylelint-disable no-unsupported-browser-features */
+	padding: calc(#{$baseline*.5} - 1px) 1em;
+	/* stylelint-enable */
 	border: 1px solid color('border');
 	border-radius: 1px;
 	background-color: #fafafa;
@@ -319,8 +322,8 @@ details {
 	summary {
 		display: block;
 		outline: none;
-		margin: 0 -.5em 0;
-		padding: 0 .5em .1em;
+		margin: 0;
+		padding: 0 .5em;
 		font-weight: 700;
 		background-color: #fff;
 		cursor: pointer;
@@ -345,7 +348,7 @@ table {
 		radial-gradient(left, ellipse, rgba(0, 0, 0, .2) 0%, rgba(0, 0, 0, 0) 75%) 0 center,
 		radial-gradient(right, ellipse, rgba(0, 0, 0, .2) 0%, rgba(0, 0, 0, 0) 75%) 100% center;
 	background-attachment: scroll, scroll;
-	background-size: 10px 100%, 10px 100%;
+	background-size: .5em 100%, .5em 100%;
 	background-repeat: no-repeat;
 	-webkit-overflow-scrolling: touch;
 
@@ -370,21 +373,21 @@ table {
 	td {
 		&:first-child {
 			background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
-			background-size: 20px 100%;
+			background-size: 1em 100%;
 			background-repeat: no-repeat;
 		}
 
 		&:last-child {
 			background-image: linear-gradient(to left, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
 			background-position: 100% 0;
-			background-size: 20px 100%;
+			background-size: 1em 100%;
 			background-repeat: no-repeat;
 		}
 
 		&:only-child {
 			background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%), linear-gradient(to left, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
 			background-position: 0 0, 100% 0;
-			background-size: 20px 100%, 20px 100%;
+			background-size: 1em 100%, 1em 100%;
 			background-repeat: no-repeat, no-repeat;
 		}
 	}
@@ -434,13 +437,13 @@ var {
 
 audio {
 	width: 100%;
-	margin: 10px 0 15px;
+	margin: .5em 0;
 }
 
 video {
 	width: 100%;
 	max-width: 100%;
-	margin: 10px 0 15px;
+	margin: .5em 0;
 }
 
 noscript {

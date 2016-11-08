@@ -29,6 +29,7 @@ body{
     color:#a3a39b; }
 
 section, article{
+  margin-top:1.4rem;
   margin-bottom:2.8rem; }
 
 address{
@@ -64,7 +65,7 @@ a{
     transition:color 0ms; }
 
 nav{
-  padding:2.1rem 0; }
+  padding:0.7rem 0; }
   nav ul{
     list-style:none;
     margin:0;
@@ -304,28 +305,28 @@ p{
   padding:0.78rem 0 0.62rem; }
   p img{
     float:right;
-    margin:.3em 0 .3em .5em;
+    margin:.25em 0 .25em .5em;
     border:1px solid #e8e8e8; }
 
 figure{
   display:inline-block;
   box-sizing:border-box;
   margin:.5em 0;
-  padding:6px 22px;
+  padding:calc(.25em - 1px) 1em;
   border:1px solid #e8e8e8;
   border-radius:1px; }
   figure img{
     max-width:100%;
-    margin:10px 0 15px; }
+    margin:.5em 0; }
     figure img + figcaption{
       margin-top:0;
-      margin-bottom:10px; }
+      margin-bottom:.5em; }
   figure figcaption{
-    margin-top:10px;
+    margin-top:.5em;
     text-align:center;
     font-style:italic; }
     figure figcaption + img{
-      margin:15px 0 10px; }
+      margin:.5em 0; }
 
 blockquote{
   margin:0 2em;
@@ -341,16 +342,16 @@ dl dt{
 
 details{
   display:block;
-  margin:20px 0;
-  padding:0 .5em;
+  margin:0;
+  padding:calc(0.7rem - 1px) 1em;
   border:1px solid #e8e8e8;
   border-radius:1px;
   background-color:#fafafa; }
   details summary{
     display:block;
     outline:none;
-    margin:0 -.5em 0;
-    padding:0 .5em .1em;
+    margin:0;
+    padding:0 .5em;
     font-weight:700;
     background-color:#fff;
     cursor:pointer; }
@@ -366,7 +367,7 @@ table{
   background:-webkit-radial-gradient(left, ellipse, rgba(0, 0, 0, 0.2) 0%, transparent 75%) 0 center, -webkit-radial-gradient(right, ellipse, rgba(0, 0, 0, 0.2) 0%, transparent 75%) 100% center;
   background:radial-gradient(left, ellipse, rgba(0, 0, 0, 0.2) 0%, transparent 75%) 0 center, radial-gradient(right, ellipse, rgba(0, 0, 0, 0.2) 0%, transparent 75%) 100% center;
   background-attachment:scroll, scroll;
-  background-size:10px 100%, 10px 100%;
+  background-size:.5em 100%, .5em 100%;
   background-repeat:no-repeat;
   -webkit-overflow-scrolling:touch; }
   table caption{
@@ -383,19 +384,19 @@ table{
   table td:first-child{
     background-image:-webkit-linear-gradient(left, white 50%, rgba(255, 255, 255, 0) 100%);
     background-image:linear-gradient(to right, white 50%, rgba(255, 255, 255, 0) 100%);
-    background-size:20px 100%;
+    background-size:1em 100%;
     background-repeat:no-repeat; }
   table td:last-child{
     background-image:-webkit-linear-gradient(right, white 50%, rgba(255, 255, 255, 0) 100%);
     background-image:linear-gradient(to left, white 50%, rgba(255, 255, 255, 0) 100%);
     background-position:100% 0;
-    background-size:20px 100%;
+    background-size:1em 100%;
     background-repeat:no-repeat; }
   table td:only-child{
     background-image:-webkit-linear-gradient(left, white 50%, rgba(255, 255, 255, 0) 100%), -webkit-linear-gradient(right, white 50%, rgba(255, 255, 255, 0) 100%);
     background-image:linear-gradient(to right, white 50%, rgba(255, 255, 255, 0) 100%), linear-gradient(to left, white 50%, rgba(255, 255, 255, 0) 100%);
     background-position:0 0, 100% 0;
-    background-size:20px 100%, 20px 100%;
+    background-size:1em 100%, 1em 100%;
     background-repeat:no-repeat, no-repeat; }
   table th{
     border:0.0625rem solid #cfcfcf; }
@@ -432,12 +433,12 @@ var{
 
 audio{
   width:100%;
-  margin:10px 0 15px; }
+  margin:.5em 0; }
 
 video{
   width:100%;
   max-width:100%;
-  margin:10px 0 15px; }
+  margin:.5em 0; }
 
 noscript{
   color:#d00000; }
