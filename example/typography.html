@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Elements</title>
+	<link rel="stylesheet" href="css/awsm.min.css">
+</head>
+<body>
+
+  <header>
+    <h1>Beautiful typography</h1>
+    <p>Using just CSS</p>
+    <nav>
+      <ul>
+        <li><a href="#rhythm">Rhythm</a></li>
+        <li><a href="#scales">Scales</a></li>
+        <li><a href="#syncopations">Syncopations</a></li>
+        <li><a href="#responsive">Responsive</a></li>
+        <li><a href="#caveats">Caveats</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="rhythm">
+      <h2>Rhythm</h2>
+      <p>At the core of beautiful typography is <em>rhythm</em>.  Vertical rhythm is achieved with consistent spacing of one <em>baseline</em> to another, regardless of font size and any other spacer elements.</p>
+      <p>Let's start with headers.</p>
+
+      <h1>A simple h1</h1>
+      <p>Despite being significantly larger, <code>h1</code> headers do not break rhythm.  It sits on a baseline, the same as the text around it, even if it itself occupies multiple baselines.</p>
+      <h1>Just h1 over multiple lines</h1>
+      <p>A short burst of large text in headers tolerate smaller <em>leading</em> than the main text.  Descenders in one line can come close to ascenders on the next without discomfort.  In most cases, and in large enough viewports, <code>h1</code> headers are single lined anyway.</p>
+      <h2>What about h2?</h2>
+      <p>Same thing.</p>
+      <h2>And h2 over multiple lines?  How does it look?</h2>
+      <p>No loss of vertical rhythm.</p>
+      <h3>This is an h3</h3>
+      <p>Still going...</p>
+      <h3>This is an h3 over multiple lines; I struggle to find fluff words to pad it out</h3>
+      <p>It's time for a compromise.  For the <a href="#scale">scale</a> chosen, it is difficult to find a <em>leading</em> that simultaneously sits every line on the baseline (to maintain overall rhythm), and that is not too large or too small.  So, a half-baseline offset is introduced whenever we have an even number of <code>h3</code> lines.  As with the other headers, in most cases, <code>h3</code> headers are single lined anyway.</p>
+      <h3>For this demo, here's another multi-line h3 to introduce another half-baseline</h3>
+      <p>And we're back to the same rhythm</p>
+      <h4>This is an h4</h4>
+      <p>No problem, since it is the same size as the main text.</p>
+      <h4>This is an h4 header over multiple lines; and here's some meaningless words just to get to the next line</h4>
+      <p>For most use cases, four headers is probably enough.  Often, if there is a perceived need for more header levels, it is likely that the content is in need of some restructuring.</p>
+    </section>
+
+    <section id="scales">
+      <h2>Scales</h2>
+      <p>Related to ryhthm is judicious selection of scales: font sizes.  Here, the Fibonacci sequence 2, 3, 5, 8, which approximate the <a href="https://en.wikipedia.org/wiki/Golden_ratio">Golden ratio</a>, is used for the heading sizes.  Technically it is 1, 1.5, 2.5, 4 relative to the main font, respectively for <code>h4</code>, <code>h3</code>, <code>h2</code>, and <code>h1</code>, but it's the same ratio.</p>
+    </section>
+
+    <section id="syncopations">
+      <h2>Syncopations</h2>
+      <p>A continuous text stream is often punctuated with non-paragraphed text.  As with music, syncopations add flavour and variety.  It is most important to end the syncopations by returning to the base rhythm.</p>
+      <p><img src="images/surprised-cat.jpg" alt="Surprised cat">Images inlined in <code>p</code> are right-aligned, with text flowing on the left without breaking rhythm.  Images outside of <code>p</code> are center aligned, but we'll come back to that when we talk about <a href="#caveats">caveats</a>.</p>
+      <p>Inline styles with the same scale as the main text shouldn't break rhythm. We have many: <abbr title="Abbreviation">abbr</abbr>, <code>code</code>, <dfn>definition</dfn>, <del>deleted</del>, <em>emphasized</em>, <ins>inserted</ins>, <kbd>keyboard</kbd>, <mark>marked</mark>, <small>small</small>, <strong>strong</strong>, <q>quotes</q>, <q lang="ru">quotes in another language</q>, or <var>variables</var>.  As long as the height of the inlined element is not greater than the line-height, overall rhythm is not disrupted.</p>
+      <p>Lists should not break rhythm:</p>
+      <ul>
+        <li>No matter what happens</li>
+        <li>Lists don't break vertical rhythm</li>
+        <li>Even when a list item is very long that it spans multiple lines; spacing must be consistent.</li>
+      </ul>
+      <p>Unordered or ordered:</p>
+      <ol>
+        <li>Stay <em>in-phrase</em></li>
+        <li>As musicians and dancers say</li>
+      </ol>
+      <p>The same goes with description lists:</p>
+      <dl>
+        <dt>Vertical rhythm</dt>
+        <dd>Baselines follow a consistent vertical rhythm, regardless of font</dd>
+        <dt>Measure</dt>
+        <dd>Our eyes comfortably track lines of a certain horizontal width; too narrow or too wide increases reading difficulty</dd>
+      </dl>
+      <p>Likewise with <code>blockquote</code>:</p>
+      <blockquote>
+        <p>Art is to space, what music is to time.</p>
+        <footer>
+          — <cite>Unknown</cite>
+        </footer>
+      </blockquote>
+      <p>Or even the humble horizontal rule.</p>
+      <hr /><br />
+      <details>
+        <summary><code>details</code> is new in HTML5</summary>
+        <p>It only works with very recent browsers.</p>
+      </details>
+      <p><code>progress</code> such as this <progress value="22" max="100" ></progress>, or <code>meter</code> such as this <meter value="0.6"></meter> are also new to HTML5.  They inline well.</p>
+      <p>There are other text-based syncopations in HTML, but they came with some <a href="#caveats">caveats</a>.  We'll revisit them shortly.</p>
+    </section>
+
+    <section id="responsive">
+      <h2>Responsiveness & fluidity</h2>
+      <aside><code>aside</code> appear on the margin, or inline, depending on screen width.  But always obeying vertical rhythm.</aside>
+      <p><em>Responsive</em> web design shows, hides, or otherwise reshuffles content according to screen size.  Notice the responsive behaviour of the <code>aside</code> tag as you resize your browser width.</p>
+      <p><em>Fluidity</em> is a lesser used technique that additionally changes font sizes based on screen size.  It exploits the fact that users generally hold smaller screens closer, and don't need as large fonts.  <em>Fluidity</em> smooths out the differences between similar screen sizes, ensuring more consistent <em>measure</em> and thus design.</p>
+      <p>A <em>measure</em> of 49 to 75 characters per line is generally desirable, with 66 characters per line ideal.  <em>Fluidity</em> ensures that on large screens, text width is capped to ensure a good maximum <em>measure</em>; and on small screens, the reduced root font size ensures that the minimum <em>measure</em> is kept for as long as possible.  Ultimately on very small screens, the desired minimum <em>measure</em> is unattainable, and we resort to just keeping a decent font size.</p>
+    </section>
+
+    <section id="caveats">
+      <h2>Caveats</h2>
+      <p>Ultimately HTML and CSS, is not InDesign or Quark.  We lack the fine control that those programs offer.  With a few hacks with baselines and padding, we've already achieved a fair amount.  But there are some more elements that don't quite work.</p>
+
+      <h3>Images & other media</h3>
+      <aside>Use <em>art direction</em> to scale images according to screen size, but that's a different topic.</aside>
+      <p>This one is particularly obvious.  Anything non-text plays by its own rules, and without complicated Javascript or other CSS trickery to add the necessary screen size dependent padding, we're not likely able to bring the subsequent text back inline.</p>
+
+      <h3>Tables</h3>
+      <p>Any widget that can potentially add browser-native elements, such as scrollbars, are impossible to control with CSS.  Nevertheless, we can still attempt to maintain rhythm when the scrollbars are <em>absent</em>.  Here's the <code>table</code> element.</p>
+      <table>
+        <caption>Table caption</caption>
+        <thead>
+          <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+            <th>Column 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>HTML Tables can be useful</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Just don't use them for layout purposes</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>Use them only when data is truly tabular</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3">Here's a footer spanning multiple columns</td>
+          </tr>
+        </tfoot>
+      </table>
+      <p>Depending on your browser, you may or may not still be maintaining rhythm by this point.</p>
+
+      <h3>Forms</h3>
+      <script>
+        function accept() {
+          document.getElementById('output').style.display = 'block';
+          return false;
+        }
+      </script>
+      <p>Form elements also tend to use browser native widgets to provide the native look and feel.  As such, they are likely to disrupt  rhythm.  Worst is the <code>textarea</code>, which users can resize on-demand.  What follows may or may not line up, depending on your browser.</p>
+      <form onsubmit="accept(); return false;">
+        <fieldset>
+          <legend>Legendary form</legend>
+          <label for="text-field">Text field</label>
+          <input type="text" id="text-field">
+          <label for="date-field">Date field</label>
+          <input type="date" id="date-field" >
+          <label for="select-field">Select field</label>
+          <select id="select-field">
+            <option value="option-1">option 1</option>
+            <option value="option-2">option 2</option>
+            <option value="option-3">option 3</option>
+          </select>
+          <label for="tetxarea-field">Text area</label>
+          <textarea id="text-area">Users can resize this!  The design horror!</textarea>
+          <label for="file-field">File field</label>
+          <input type="file" id="file-field" >
+          <input type="submit" value="Submit Input">
+          <button type="reset">Button</button>
+          <output style="display: none" id="output">
+            <p>You clicked the submit input!</p>
+          </output>
+        </fieldset>
+      </form>
+      <p>Notice that not all form elements line up with the baseline.  That's ok, as long as they line up among themselves, and return to rhythm after.</p>
+
+      <h3>Font changes</h3>
+      <p>Since CSS doesn't follow the more conventional notion of a baseline, which is fixed regardless of font, changing fonts is problematic and causes loss of vertical rhythm.</p>
+      <p>Any inline elements that enlarge height is particularly disruptive, as it alters the effective line-height just for the line it is occupying.  And there is no way to control it.  Use things like <var>x<sub>sub</sub> = y<sup>sup</sup></var> with caution.  Preferably, don't inline them, as the lines before and after them look strange with inconsistent spacing - you get one tall line surrounded by normal ones.</p>
+      <p>We've lost rhythm now...</p>
+      <samp>
+        Lines inside &lt;samp&gt;, will wrap<br />
+        This is a very long line for no reason at all, except to force it to wrap.
+      </samp>
+      <p>No way we can regain it now.</p>
+      <pre><code>&lt;code&gt;&lt;pre&gt makes things worse
+Long lines don't wrap, and we get browser native horizontal scrollbars, mixed in with font changes.</code></pre>
+      <p>We might as well get used to the new rhythm after these elements.</p>
+    </section>
+
+    <section id="conclusion">
+      <h2>Conclusion</h2>
+      <p>Maintaining perfect vertical rhythm throughout the entire page may not be that important considering the vertical scrolling nature of HTML.  At any one scroll position, the visible page can still <em>mostly</em> be in rhythm.  Nonetheless, the other topics presented here can lead to beautiful typography using just CSS.</p>
+      <figure>
+        <img src="images/cat.jpg" alt="Kitty">
+        <figcaption>Here's a kitty to offset the pain</figcaption>
+      </figure>
+    </section>
+  </main>
+
+  <script src="http://files.keyes.ie/things/baseliner/baseliner-latest.min.js">
+  </script>
+  <script>
+    window.onload = function() {
+      baseliner = new Baseliner({ gridColor: 'red', gridHeight: 28, gridOffset: 10 });
+      baseliner.toggle();
+    }
+  </script>
+
+</body>
+</html>
