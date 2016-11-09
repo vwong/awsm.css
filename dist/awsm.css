@@ -278,7 +278,7 @@ pre{
   border:1px solid #e8e8e8;
   border-radius:1px;
   background:#f2f2f2;
-  margin:0; }
+  margin:1em 0; }
   pre > code{
     display:block;
     overflow-x:auto;
