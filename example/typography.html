@@ -40,7 +40,7 @@
       <h3>This is an h3</h3>
       <p>Still going...</p>
       <h3>This is an h3 over multiple lines; I struggle to find fluff words to pad it out</h3>
-      <p>It's time for a compromise.  For the <a href="#scale">scale</a> chosen, it is difficult to find a <em>leading</em> that simultaneously sits every line on the baseline (to maintain overall rhythm), and that is not too large or too small.  So, a half-baseline offset is introduced whenever we have an even number of <code>h3</code> lines.  As with the other headers, in most cases, <code>h3</code> headers are single lined anyway.</p>
+      <p>It's time for a compromise.  For the <a href="#scales">scale</a> chosen, it is difficult to find a <em>leading</em> that simultaneously sits every line on the baseline (to maintain overall rhythm), and that is not too large or too small.  So, a half-baseline offset is introduced whenever we have an even number of <code>h3</code> lines.  As with the other headers, in most cases, <code>h3</code> headers are single lined anyway.</p>
       <h3>For this demo, here's another multi-line h3 to introduce another half-baseline</h3>
       <p>And we're back to the same rhythm</p>
       <h4>This is an h4</h4>
@@ -85,12 +85,13 @@
         </footer>
       </blockquote>
       <p>Or even the humble horizontal rule.</p>
-      <hr /><br />
+      <hr />
+      <p>Some exotic HTML5 elements:</p>
       <details>
-        <summary><code>details</code> is new in HTML5</summary>
+        <summary>Click on <code>details</code> to see it expand</summary>
         <p>It only works with very recent browsers.</p>
       </details>
-      <p><code>progress</code> such as this <progress value="22" max="100" ></progress>, or <code>meter</code> such as this <meter value="0.6"></meter> are also new to HTML5.  They inline well.</p>
+      <p><code>progress</code> <progress value="22" max="100" ></progress>, or <code>meter</code> <meter value="0.6"></meter> are also new to HTML5.  They inline well.</p>
       <p>There are other text-based syncopations in HTML, but they came with some <a href="#caveats">caveats</a>.  We'll revisit them shortly.</p>
     </section>
 
@@ -199,7 +200,7 @@ Long lines don't wrap, and we get browser native horizontal scrollbars, mixed in
       <p>Maintaining perfect vertical rhythm throughout the entire page may not be that important considering the vertical scrolling nature of HTML.  At any one scroll position, the visible page can still <em>mostly</em> be in rhythm.  Nonetheless, the other topics presented here can lead to beautiful typography using just CSS.</p>
       <figure>
         <img src="images/cat.jpg" alt="Kitty">
-        <figcaption>Here's a kitty to offset the pain</figcaption>
+        <figcaption>Here's a kitty to offset the pain, and showcase <code>figure</code></figcaption>
       </figure>
     </section>
   </main>

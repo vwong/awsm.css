@@ -18,7 +18,7 @@
 	@include inputs-buttons;
 	display: block;
 	width: 100%;
-	border-radius: 0;
+	border-radius: 2px;
 
 	&:focus {
 		border: 1px solid darken(color('border'), 50);
