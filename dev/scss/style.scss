@@ -7,13 +7,13 @@ html {
 	line-height: 1.4;
 	color: color('text');
 
-	@media (min-width: $scale-start-width) {
+	@media (min-width: $scale-small-width) {
 		/* stylelint-disable no-unsupported-browser-features */
-		font-size: calc(16px + (20 - 16) * (100vw - 336px) / (600 - 336));
+		font-size: calc(16px + (20 - 16) * (100vw - 336px) / (640 - 336));
 		/* stylelint-enable */
 	}
 
-	@media (min-width: $scale-end-width) {
+	@media (min-width: $scale-large-width) {
 		font-size: $scale-large-font;
 	}
 }
@@ -37,41 +37,38 @@ body {
 	}
 
 	> footer {
-		margin-top: 4em;
+		margin-top: $baseline*2;
 		text-align: center;
-		font-size: .9rem;
+		font-size: .8rem;
 		color: color('invisible');
 	}
 }
 
 section, article {
-	margin-top: $baseline;
-	margin-bottom: $baseline*2;
+	margin: $baseline 0 $baseline*2;
 }
 
 address {
-	font-style: normal;
+	@include lift(.62rem);
 }
 
 aside {
-	$side: 200px;
-	$width: $side * 3/4; // 20px * 7.5em, approx 15 characters
 	position: absolute;
 	right: -$side;
-	max-width: $width;
+	max-width: $side*.75;
 
-	@include baseline(.6rem);
+	@include lift(.6rem);
 	font-weight: 400;
 	font-style: italic;
 	color: color('disabled');
 
 	// tmp solution. see: https://github.com/stylelint/stylelint/issues/1754
 	/* stylelint-disable media-feature-no-missing-punctuation */
-	@media (max-width: $scale-end-width + $side * 2 + 40px) {
+	@media (max-width: $scale-large-width + $side*2 + $browser-scroll-bar) {
 		position: relative;
 		right: auto;
 		max-width: none;
-		@include baseline(.6rem);
+		@include lift(.6rem);
 	}
 	/* stylelint-enable */
 }
@@ -102,7 +99,7 @@ nav {
 
 		li {
 			display: inline-block;
-			margin: 0 .5rem;
+			margin: 0 .5em;
 			color: color('disabled');
 		}
 	}
@@ -120,40 +117,40 @@ nav {
 }
 
 h1 {
-	@include baseline(.36rem);
-	font-size: 4rem;
+	@include lift(.36rem);
+	font-size: 4em;
 	font-weight: 400;
 	line-height: $baseline*3;
 	color: color('accent');
 }
 
 h2 {
-	@include baseline(.47rem);
-	font-size: 2.5rem;
+	@include lift(.47rem);
+	font-size: 2.5em;
 	font-weight: 400;
 	line-height: $baseline*2;
 	color: color('headers');
 }
 
 h3 {
-	@include baseline(.46rem);
-	margin-top: $baseline/2;
-	font-size: 1.5rem;
+	@include lift(.46rem);
+	margin-top: $baseline*.5;
+	font-size: 1.5em;
 	font-weight: 400;
 	line-height: $baseline*1.5;
 	color: color('headers');
 }
 
 h4 {
-	@include baseline(.62rem);
-	font-size: 1rem;
+	@include lift(.62rem);
+	font-size: 1em;
 	font-weight: bold;
 	line-height: $baseline;
 	color: darken(color('disabled'), 10);
 }
 
 form {
-	max-width: 25rem;
+	max-width: 25em;
 	margin: 0 auto;
 }
 
@@ -213,7 +210,7 @@ input {
 
 	&[type=color] {
 		width: 4em;
-		height: 2em;
+		height: $baseline*1.5;
 	}
 
 	&[type=file] {
@@ -237,7 +234,7 @@ pre {
 	> code {
 		display: block;
 		overflow-x: auto;
-		padding: 10px 15px;
+		padding: .5em;
 		border: 0;
 		// for compatibility with syntax highlighters
 		background: transparent;
@@ -257,7 +254,7 @@ img {
 }
 
 p {
-	@include baseline(.62rem);
+	@include lift(.62rem);
 
 	img {
 		float: right;
@@ -303,12 +300,12 @@ blockquote {
 }
 
 ul, ol {
-	@include baseline(.58rem);
+	@include lift(.58rem);
 	margin-left: 1em;
 }
 
 dl {
-	@include baseline(.58rem);
+	@include lift(.58rem);
 	margin-left: 0em;
 
 	dt {
@@ -354,7 +351,7 @@ table {
 	-webkit-overflow-scrolling: touch;
 
 	caption {
-		@include baseline(.6rem);
+		@include lift(.6rem);
 		font-style: italic;
 		background: #fff;
 	}
@@ -394,7 +391,7 @@ table {
 	}
 
 	th {
-		border: .0625rem solid darken(color('border'), 10);
+		border: .0625em solid darken(color('border'), 10);
 	}
 }
 

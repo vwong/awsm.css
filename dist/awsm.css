@@ -5,7 +5,7 @@ html{
   color:#111; }
   @media (min-width: 336px){
     html{
-      font-size:calc(16px + (20 - 16) * (100vw - 336px) / (600 - 336)); } }
+      font-size:calc(16px + (20 - 16) * (100vw - 336px) / (640 - 336)); } }
   @media (min-width: 640px){
     html{
       font-size:20px; } }
@@ -24,17 +24,17 @@ body{
     margin-bottom:2.8rem;
     text-align:center; }
   body > footer{
-    margin-top:4em;
+    margin-top:2.8rem;
     text-align:center;
-    font-size:.9rem;
+    font-size:.8rem;
     color:#a3a39b; }
 
 section, article{
-  margin-top:1.4rem;
-  margin-bottom:2.8rem; }
+  margin:1.4rem 0 2.8rem; }
 
 address{
-  font-style:normal; }
+  margin:0;
+  padding:0.78rem 0 0.62rem; }
 
 aside{
   position:absolute;
@@ -73,7 +73,7 @@ nav{
     padding:0; }
     nav ul li{
       display:inline-block;
-      margin:0 .5rem;
+      margin:0 .5em;
       color:#7d7d77; }
   nav a:visited{
     color:#0064c1; }
@@ -83,7 +83,7 @@ nav{
 h1{
   margin:0;
   padding:1.04rem 0 0.36rem;
-  font-size:4rem;
+  font-size:4em;
   font-weight:400;
   line-height:4.2rem;
   color:#070600; }
@@ -91,7 +91,7 @@ h1{
 h2{
   margin:0;
   padding:0.93rem 0 0.47rem;
-  font-size:2.5rem;
+  font-size:2.5em;
   font-weight:400;
   line-height:2.8rem;
   color:#25291c; }
@@ -100,7 +100,7 @@ h3{
   margin:0;
   padding:0.94rem 0 0.46rem;
   margin-top:0.7rem;
-  font-size:1.5rem;
+  font-size:1.5em;
   font-weight:400;
   line-height:2.1rem;
   color:#25291c; }
@@ -108,13 +108,13 @@ h3{
 h4{
   margin:0;
   padding:0.78rem 0 0.62rem;
-  font-size:1rem;
+  font-size:1em;
   font-weight:bold;
   line-height:1.4rem;
   color:#63635e; }
 
 form{
-  max-width:25rem;
+  max-width:25em;
   margin:0 auto; }
 
 fieldset{
@@ -249,7 +249,7 @@ input[type=color], input[type=file]{
 
 input[type=color]{
   width:4em;
-  height:2em; }
+  height:2.1rem; }
 
 input[type=file]{
   width:100%; }
@@ -284,7 +284,7 @@ pre{
   pre > code{
     display:block;
     overflow-x:auto;
-    padding:10px 15px;
+    padding:.5em;
     border:0;
     background:transparent;
     -webkit-overflow-scrolling:touch; }
@@ -401,7 +401,7 @@ table{
     background-size:1em 100%, 1em 100%;
     background-repeat:no-repeat, no-repeat; }
   table th{
-    border:0.0625rem solid #cfcfcf; }
+    border:0.0625em solid #cfcfcf; }
 
 abbr{
   margin-right:-.15em;
