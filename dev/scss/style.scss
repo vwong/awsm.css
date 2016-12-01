@@ -2,7 +2,7 @@
 @import 'variables';
 
 html {
-	font-family: 'PT Serif', Georgia, sans-serif;
+	font-family: $serif-font;
 	font-size: $scale-small-font; // fallback
 	line-height: 1.4;
 	color: color('text');
@@ -19,19 +19,18 @@ html {
 }
 
 body {
-	margin: $baseline;
+	margin: 0;
 
-	> header,
-	> main,
-	> footer,
-	> article {
-		display: block;
+	header,
+	main,
+	footer,
+	article {
 		position: relative;
 		max-width: $content-size;
 		margin: 0 auto;
 	}
 
-	> header {
+	header {
 		margin-bottom: $baseline*2;
 		text-align: center;
 	}
@@ -49,7 +48,7 @@ section, article {
 }
 
 address {
-	@include lift(.62rem);
+	@include lift($p-lift);
 }
 
 aside {
@@ -57,8 +56,7 @@ aside {
 	right: -$side;
 	max-width: $side*.75;
 
-	@include lift(.6rem);
-	font-weight: 400;
+	@include lift($p-lift);
 	font-style: italic;
 	color: color('disabled');
 
@@ -68,7 +66,7 @@ aside {
 		position: relative;
 		right: auto;
 		max-width: none;
-		@include lift(.6rem);
+		@include lift($p-lift);
 	}
 	/* stylelint-enable */
 }
@@ -90,7 +88,7 @@ a {
 }
 
 nav {
-	padding: $baseline*.5 0;
+	@include lift($p-lift);
 
 	ul {
 		list-style: none;
@@ -103,23 +101,12 @@ nav {
 			color: color('disabled');
 		}
 	}
-
-	a {
-		&:visited {
-			color: color('link');
-		}
-
-		&:hover,
-		&:focus {
-			color: color('link-hover');
-		}
-	}
 }
 
 h1 {
 	@include lift(.36rem);
 	font-size: 4em;
-	font-weight: 400;
+	font-weight: normal;
 	line-height: $baseline*3;
 	color: color('accent');
 }
@@ -127,22 +114,21 @@ h1 {
 h2 {
 	@include lift(.47rem);
 	font-size: 2.5em;
-	font-weight: 400;
+	font-weight: normal;
 	line-height: $baseline*2;
 	color: color('headers');
 }
 
 h3 {
-	@include lift(.46rem);
-	margin-top: $baseline*.5;
+	@include lift(.46rem, $baseline*.5);
 	font-size: 1.5em;
-	font-weight: 400;
+	font-weight: normal;
 	line-height: $baseline*1.5;
 	color: color('headers');
 }
 
 h4 {
-	@include lift(.62rem);
+	@include lift($p-lift);
 	font-size: 1em;
 	font-weight: bold;
 	line-height: $baseline;
@@ -150,7 +136,7 @@ h4 {
 }
 
 form {
-	max-width: 25em;
+	max-width: $content-size*.8;
 	margin: 0 auto;
 }
 
@@ -210,7 +196,6 @@ input {
 
 	&[type=color] {
 		width: 4em;
-		height: $baseline*1.5;
 	}
 
 	&[type=file] {
@@ -242,7 +227,7 @@ pre {
 	}
 }
 
-code {
+code, samp {
 	@include code;
 	padding: .0625em .3125em;
 }
@@ -254,7 +239,7 @@ img {
 }
 
 p {
-	@include lift(.62rem);
+	@include lift($p-lift);
 
 	img {
 		float: right;
@@ -296,20 +281,19 @@ figure {
 
 blockquote {
 	margin: 0 2em;
-	padding-top: -.1em;
 }
 
 ul, ol {
-	@include lift(.58rem);
+	@include lift($p-lift);
 	margin-left: 1em;
 }
 
 dl {
-	@include lift(.58rem);
+	@include lift($p-lift);
 	margin-left: 0em;
 
 	dt {
-		font-weight: 700;
+		font-weight: bold;
 	}
 }
 
@@ -323,7 +307,7 @@ details {
 		outline: none;
 		margin: 0;
 		padding: 0 .5em;
-		font-weight: 700;
+		font-weight: bold;
 		cursor: pointer;
 	}
 }
@@ -391,14 +375,14 @@ table {
 	}
 
 	th {
-		border: .0625em solid darken(color('border'), 10);
+		border: 1px solid darken(color('border'), 10);
 	}
 }
 
 abbr {
 	margin-right: -.15em;
 	letter-spacing: .15em;
-	font-size: .875rem;
+	font-size: .875em;
 }
 
 dfn {
@@ -429,7 +413,7 @@ hr {
 }
 
 var {
-	font-family: monospace;
+	font-family: $mono-font;
 	font-style: normal;
 }
 
@@ -452,6 +436,7 @@ kbd {
 	display: inline-block;
 	margin: 0;
 	padding: 0 .6ex;
+	font-family: $mono-font;
 	font-size: .9em;
 	border-radius: 5px;
 	box-shadow: 0 1px color('border');

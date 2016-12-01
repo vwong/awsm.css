@@ -58,7 +58,7 @@
       <h2>Syncopations</h2>
       <p>A continuous text stream is often punctuated with non-paragraphed text.  As with music, syncopations add flavour and variety.  It is most important to end the syncopations by returning to the base rhythm.</p>
       <p><img src="images/surprised-cat.jpg" alt="Surprised cat">Images inlined in <code>p</code> are right-aligned, with text flowing on the left without breaking rhythm.  Images outside of <code>p</code> are center aligned, but we'll come back to that when we talk about <a href="#caveats">caveats</a>.</p>
-      <p>Inline styles with the same scale as the main text shouldn't break rhythm. We have many: <abbr title="Abbreviation">abbr</abbr>, <code>code</code>, <dfn>definition</dfn>, <del>deleted</del>, <em>emphasized</em>, <ins>inserted</ins>, <kbd>keyboard</kbd>, <mark>marked</mark>, <small>small</small>, <strong>strong</strong>, <q>quotes</q>, <q lang="ru">quotes in another language</q>, or <var>variables</var>.  As long as the height of the inlined element is not greater than the line-height, overall rhythm is not disrupted.</p>
+      <p>Inline styles with the same scale as the main text shouldn't break rhythm. We have many: <abbr title="Abbreviation">abbr</abbr>, <code>code</code>, <dfn>definition</dfn>, <del>deleted</del>, <em>emphasized</em>, <ins>inserted</ins>, <kbd>keyboard</kbd>, <mark>marked</mark>, <samp>sample</samp>, <small>small</small>, <strong>strong</strong>, <q>quotes</q>, <q lang="ru">quotes in another language</q>, or <var>variables</var>.  As long as the height of the inlined element is not greater than the line-height, overall rhythm is not disrupted.</p>
       <p>Lists should not break rhythm:</p>
       <ul>
         <li>No matter what happens</li>
@@ -172,6 +172,8 @@
           </select>
           <label for="tetxarea-field">Text area</label>
           <textarea id="text-area">Users can resize this!  The design horror!</textarea>
+          <label for="color-field">Color field</label>
+          <input type="color" id="color-field" value="#d01d1d" >
           <label for="file-field">File field</label>
           <input type="file" id="file-field" >
           <input type="submit" value="Submit Input">
@@ -187,11 +189,6 @@
       <p>Since CSS doesn't follow the more conventional notion of a baseline, which is fixed regardless of font, changing fonts is problematic and causes loss of vertical rhythm.</p>
       <p>Any inline elements that enlarge height is particularly disruptive, as it alters the effective line-height just for the line it is occupying.  And there is no way to control it.  Use things like <var>x<sub>sub</sub> = y<sup>sup</sup></var> with caution.  Preferably, don't inline them, as the lines before and after them look strange with inconsistent spacing - you get one tall line surrounded by normal ones.</p>
       <p>We've lost rhythm now...</p>
-      <samp>
-        Lines inside &lt;samp&gt;, will wrap<br />
-        This is a very long line for no reason at all, except to force it to wrap.
-      </samp>
-      <p>No way we can regain it now.</p>
       <pre><code>&lt;code&gt;&lt;pre&gt makes things worse
 Long lines don't wrap, and we get browser native horizontal scrollbars, mixed in with font changes.</code></pre>
       <p>We might as well get used to the new rhythm after these elements.</p>

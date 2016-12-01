@@ -11,6 +11,7 @@
 	font-family: inherit;
 	font-size: 1em;
 	border: 1px solid darken(color('border'), 20);
+	border-radius: 4px;
 	transition: border 200ms;
 }
 
@@ -18,7 +19,6 @@
 	@include inputs-buttons;
 	display: block;
 	width: 100%;
-	border-radius: 2px;
 
 	&:focus {
 		border: 1px solid darken(color('border'), 50);
@@ -29,9 +29,6 @@
 	@include inputs-buttons;
 	display: inline-block;
 	width: auto;
-	height: $baseline*1.5;
-	margin-bottom: $baseline*.5;
-	border-radius: 2px;
 	background: color('border');
 	color: color('headers');
 	cursor: pointer;
@@ -44,14 +41,14 @@
 }
 
 @mixin code {
-	font-family: Consolas, Courier, monospace;
+	font-family: $mono-font;
 	font-size: .9em;
 	border: 1px solid color('border');
 	border-radius: 1px;
 	background: #f2f2f2;
 }
 
-@mixin lift($offset) {
+@mixin lift($offset, $top: 0rem) {
 	margin: 0;
-	padding: #{$baseline - $offset} 0 $offset;
+	padding: #{$baseline - $offset + $top} 0 $offset;
 }

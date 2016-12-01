@@ -1,5 +1,5 @@
 html{
-  font-family:'PT Serif', Georgia, sans-serif;
+  font-family:"PT Serif", Georgia, serif;
   font-size:16px;
   line-height:1.4;
   color:#111; }
@@ -11,16 +11,15 @@ html{
       font-size:20px; } }
 
 body{
-  margin:1.4rem; }
-  body > header,
-  body > main,
-  body > footer,
-  body > article{
-    display:block;
+  margin:0; }
+  body header,
+  body main,
+  body footer,
+  body article{
     position:relative;
     max-width:32rem;
     margin:0 auto; }
-  body > header{
+  body header{
     margin-bottom:2.8rem;
     text-align:center; }
   body > footer{
@@ -41,8 +40,7 @@ aside{
   right:-200px;
   max-width:150px;
   margin:0;
-  padding:0.8rem 0 0.6rem;
-  font-weight:400;
+  padding:0.78rem 0 0.62rem;
   font-style:italic;
   color:#7d7d77; }
   @media (max-width: 1080px){
@@ -51,7 +49,7 @@ aside{
       right:auto;
       max-width:none;
       margin:0;
-      padding:0.8rem 0 0.6rem; } }
+      padding:0.78rem 0 0.62rem; } }
 
 a{
   text-decoration:none;
@@ -66,7 +64,8 @@ a{
     transition:color 0ms; }
 
 nav{
-  padding:0.7rem 0; }
+  margin:0;
+  padding:0.78rem 0 0.62rem; }
   nav ul{
     list-style:none;
     margin:0;
@@ -75,16 +74,12 @@ nav{
       display:inline-block;
       margin:0 .5em;
       color:#7d7d77; }
-  nav a:visited{
-    color:#0064c1; }
-  nav a:hover, nav a:focus{
-    color:#3000c1; }
 
 h1{
   margin:0;
   padding:1.04rem 0 0.36rem;
   font-size:4em;
-  font-weight:400;
+  font-weight:normal;
   line-height:4.2rem;
   color:#070600; }
 
@@ -92,16 +87,15 @@ h2{
   margin:0;
   padding:0.93rem 0 0.47rem;
   font-size:2.5em;
-  font-weight:400;
+  font-weight:normal;
   line-height:2.8rem;
   color:#25291c; }
 
 h3{
   margin:0;
-  padding:0.94rem 0 0.46rem;
-  margin-top:0.7rem;
+  padding:1.64rem 0 0.46rem;
   font-size:1.5em;
-  font-weight:400;
+  font-weight:normal;
   line-height:2.1rem;
   color:#25291c; }
 
@@ -114,7 +108,7 @@ h4{
   color:#63635e; }
 
 form{
-  max-width:25em;
+  max-width:25.6rem;
   margin:0 auto; }
 
 fieldset{
@@ -137,13 +131,11 @@ button{
   font-family:inherit;
   font-size:1em;
   border:1px solid #b5b5b5;
+  border-radius:4px;
   -webkit-transition:border 200ms;
   transition:border 200ms;
   display:inline-block;
   width:auto;
-  height:2.1rem;
-  margin-bottom:0.7rem;
-  border-radius:2px;
   background:#e8e8e8;
   color:#25291c;
   cursor:pointer; }
@@ -161,13 +153,11 @@ select{
   font-family:inherit;
   font-size:1em;
   border:1px solid #b5b5b5;
+  border-radius:4px;
   -webkit-transition:border 200ms;
   transition:border 200ms;
   display:inline-block;
   width:auto;
-  height:2.1rem;
-  margin-bottom:0.7rem;
-  border-radius:2px;
   background:#e8e8e8;
   color:#25291c;
   cursor:pointer;
@@ -186,11 +176,11 @@ input[type=text], input[type=password], input[type^=date], input[type=email], in
   font-family:inherit;
   font-size:1em;
   border:1px solid #b5b5b5;
+  border-radius:4px;
   -webkit-transition:border 200ms;
   transition:border 200ms;
   display:block;
   width:100%;
-  border-radius:2px;
   display:block; }
   input[type=text]:focus, input[type=password]:focus, input[type^=date]:focus, input[type=email]:focus, input[type=number]:focus, input[type=search]:focus, input[type=tel]:focus, input[type=time]:focus, input[type=month]:focus, input[type=week]:focus, input[type=url]:focus{
     border:1px solid dimgray; }
@@ -204,13 +194,11 @@ input[type=submit], input[type=button], input[type=reset]{
   font-family:inherit;
   font-size:1em;
   border:1px solid #b5b5b5;
+  border-radius:4px;
   -webkit-transition:border 200ms;
   transition:border 200ms;
   display:inline-block;
   width:auto;
-  height:2.1rem;
-  margin-bottom:0.7rem;
-  border-radius:2px;
   background:#e8e8e8;
   color:#25291c;
   cursor:pointer;
@@ -231,13 +219,11 @@ input[type=color], input[type=file]{
   font-family:inherit;
   font-size:1em;
   border:1px solid #b5b5b5;
+  border-radius:4px;
   -webkit-transition:border 200ms;
   transition:border 200ms;
   display:inline-block;
   width:auto;
-  height:2.1rem;
-  margin-bottom:0.7rem;
-  border-radius:2px;
   background:#e8e8e8;
   color:#25291c;
   cursor:pointer;
@@ -248,8 +234,7 @@ input[type=color], input[type=file]{
     color:#070600; }
 
 input[type=color]{
-  width:4em;
-  height:2.1rem; }
+  width:4em; }
 
 input[type=file]{
   width:100%; }
@@ -263,11 +248,11 @@ textarea{
   font-family:inherit;
   font-size:1em;
   border:1px solid #b5b5b5;
+  border-radius:4px;
   -webkit-transition:border 200ms;
   transition:border 200ms;
   display:block;
   width:100%;
-  border-radius:2px;
   height:4.9rem;
   resize:vertical;
   margin-bottom:0.7rem; }
@@ -289,7 +274,7 @@ pre{
     background:transparent;
     -webkit-overflow-scrolling:touch; }
 
-code{
+code, samp{
   font-family:Consolas, Courier, monospace;
   font-size:.9em;
   border:1px solid #e8e8e8;
@@ -331,20 +316,19 @@ figure{
       margin:.5em 0; }
 
 blockquote{
-  margin:0 2em;
-  padding-top:-.1em; }
+  margin:0 2em; }
 
 ul, ol{
   margin:0;
-  padding:0.82rem 0 0.58rem;
+  padding:0.78rem 0 0.62rem;
   margin-left:1em; }
 
 dl{
   margin:0;
-  padding:0.82rem 0 0.58rem;
+  padding:0.78rem 0 0.62rem;
   margin-left:0em; }
   dl dt{
-    font-weight:700; }
+    font-weight:bold; }
 
 details{
   display:block;
@@ -355,7 +339,7 @@ details{
     outline:none;
     margin:0;
     padding:0 .5em;
-    font-weight:700;
+    font-weight:bold;
     cursor:pointer; }
 table{
   display:inline-block;
@@ -401,12 +385,12 @@ table{
     background-size:1em 100%, 1em 100%;
     background-repeat:no-repeat, no-repeat; }
   table th{
-    border:0.0625em solid #cfcfcf; }
+    border:1px solid #cfcfcf; }
 
 abbr{
   margin-right:-.15em;
   letter-spacing:.15em;
-  font-size:.875rem; }
+  font-size:.875em; }
 
 dfn{
   letter-spacing:.05em; }
@@ -430,7 +414,7 @@ hr{
   background-image:linear-gradient(to right, #fff, #999, #fff); }
 
 var{
-  font-family:monospace;
+  font-family:Consolas, Courier, monospace;
   font-style:normal; }
 
 audio{
@@ -449,6 +433,7 @@ kbd{
   display:inline-block;
   margin:0;
   padding:0 .6ex;
+  font-family:Consolas, Courier, monospace;
   font-size:.9em;
   border-radius:5px;
   box-shadow:0 1px #e8e8e8;
