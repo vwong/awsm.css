@@ -48,7 +48,7 @@ section, article {
 }
 
 address {
-	@include lift($p-lift);
+	margin: 0;
 }
 
 aside {
@@ -56,7 +56,7 @@ aside {
 	right: -$side;
 	max-width: $side*.75;
 
-	@include lift($p-lift);
+	margin: 0;
 	font-style: italic;
 	color: color('disabled');
 
@@ -66,7 +66,7 @@ aside {
 		position: relative;
 		right: auto;
 		max-width: none;
-		@include lift($p-lift);
+		margin: 0;
 	}
 	/* stylelint-enable */
 }
@@ -88,7 +88,7 @@ a {
 }
 
 nav {
-	@include lift($p-lift);
+	margin: 0;
 
 	ul {
 		list-style: none;
@@ -104,7 +104,7 @@ nav {
 }
 
 h1 {
-	@include lift(.36rem);
+	@include lift($baseline*.82, $baseline);
 	font-size: 4em;
 	font-weight: normal;
 	line-height: $baseline*3;
@@ -112,7 +112,7 @@ h1 {
 }
 
 h2 {
-	@include lift(.47rem);
+	@include lift($baseline*.86, $baseline);
 	font-size: 2.5em;
 	font-weight: normal;
 	line-height: $baseline*2;
@@ -120,7 +120,7 @@ h2 {
 }
 
 h3 {
-	@include lift(.46rem, $baseline*.5);
+	@include lift($baseline*.9, $baseline*.5);
 	font-size: 1.5em;
 	font-weight: normal;
 	line-height: $baseline*1.5;
@@ -128,7 +128,7 @@ h3 {
 }
 
 h4 {
-	@include lift($p-lift);
+	@include lift($baseline, $baseline);
 	font-size: 1em;
 	font-weight: bold;
 	line-height: $baseline;
@@ -239,7 +239,7 @@ img {
 }
 
 p {
-	@include lift($p-lift);
+	margin: 0;
 
 	img {
 		float: right;
@@ -284,13 +284,11 @@ blockquote {
 }
 
 ul, ol {
-	@include lift($p-lift);
-	margin-left: 1em;
+	margin: 0 0 0 1em;
 }
 
 dl {
-	@include lift($p-lift);
-	margin-left: 0em;
+	margin: 0;
 
 	dt {
 		font-weight: bold;
@@ -335,7 +333,6 @@ table {
 	-webkit-overflow-scrolling: touch;
 
 	caption {
-		@include lift(.6rem);
 		font-style: italic;
 		background: #fff;
 	}
@@ -346,7 +343,7 @@ table {
 
 	td, th {
 		/* stylelint-disable no-unsupported-browser-features */
-		padding: calc(#{$baseline} - .6rem - 1px) .7em .6rem;
+		padding: calc(#{$baseline*.5} - 1px) .7em $baseline*.5;
 		/* stylelint-enable */
 		vertical-align: top;
 		border: 1px solid color('border');
