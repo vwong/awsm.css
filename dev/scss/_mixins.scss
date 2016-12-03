@@ -4,7 +4,7 @@
 	outline: none;
 	box-sizing: border-box;
 	height: $baseline*1.5;
-	margin-bottom: $baseline*.5;
+	margin: 0 0 $baseline*.5;
 	/* stylelint-disable no-unsupported-browser-features */
 	padding: calc(.25em - 1px) .5em;
 	/* stylelint-enable */
@@ -49,6 +49,5 @@
 }
 
 @mixin lift($offset, $top: 0rem) {
-	margin: 0;
 	padding: #{$baseline - $offset + $top} 0 $offset;
 }

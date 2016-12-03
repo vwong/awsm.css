@@ -150,12 +150,6 @@
       <p>Depending on <a href="http://www.w3.org/TR/CSS21/tables.html#separated-borders">your browser's implementation</a>, you may or may not still be maintaining rhythm by this point. </p>
 
       <h3>Forms</h3>
-      <script>
-        function accept() {
-          document.getElementById('output').style.display = 'block';
-          return false;
-        }
-      </script>
       <p>Form elements also tend to use browser native widgets to provide the native look and feel.  As such, they are likely to disrupt  rhythm.  Worst is the <code>textarea</code>, which users can resize on-demand.  What follows may or may not line up, depending on your browser.</p>
       <form onsubmit="accept(); return false;">
         <fieldset>
@@ -208,6 +202,12 @@ Long lines don't wrap, and we get browser native horizontal scrollbars, mixed in
     <p>Text on a footer is usually brief and smaller than the main font.  Just like music, consistent rhythm fades away at the end, bringing the piece to an end.</p>
   </footer>
 
+  <script>
+    function accept() {
+      document.getElementById('output').style.display = 'block';
+      return false;
+    }
+  </script>
   <script src="http://files.keyes.ie/things/baseliner/baseliner-latest.min.js">
   </script>
   <script>
