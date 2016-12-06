@@ -1,7 +1,13 @@
-@@include('./includes/head.html', {
-  "title": "Elements"
-})
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Beautiful Typography</title>
+	<link rel="stylesheet" href="css/awsm.min.css">
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+</head>
+<body>
   <header>
     <h1>Beautiful typography</h1>
     <p>Using just CSS</p>
@@ -19,8 +25,13 @@
 
   <main>
     <section id="rhythm">
+      <h2>Introduction</h2>
+      <p>Typographic design is a delicate balance between bringing enough attention to a piece of text, such that it will be read.  Yet, once the attention is drawn, relinguishes it such that the reader focusses on the content itself.</p>
+    </section>
+    <section id="rhythm">
       <h2>Rhythm</h2>
       <p>At the core of beautiful typography is <em>rhythm</em>.  Vertical rhythm is achieved with consistent spacing of one <em>baseline</em> to another, regardless of font size and any other spacer elements.</p>
+      <p>Rhythm is not a prescription for dry monotonic lines; it allows splashes of syncopations of font size changes, and interjections of non-text elements.  Provided the consistency is resumed, rhythm is maintained.</p>
       <p>Let's start with headers.</p>
 
       <h1>A simple h1</h1>
@@ -45,7 +56,9 @@
 
     <section id="scales">
       <h2>Scales</h2>
-      <p>Related to ryhthm is judicious selection of scales: font sizes.  Here, the Fibonacci sequence 2, 3, 5, 8, which approximate the <a href="https://en.wikipedia.org/wiki/Golden_ratio">Golden ratio</a>, is used for the heading sizes.  Technically it is 1, 1.5, 2.5, 4 relative to the main font, respectively for <code>h4</code>, <code>h3</code>, <code>h2</code>, and <code>h1</code>, but it's the same ratio.</p>
+      <p>Related to rhythm is judicious selection of scales: in font sizes.  A music composer never composes without a scale, and neither should a web designer.</p>
+      <aside>Technically it is 1, 1.5, 2.5, 4 relative to the main font, respectively for <code>h4</code>, <code>h3</code>, <code>h2</code>, and <code>h1</code>.</aside>
+      <p>Here, the Fibonacci sequence 2, 3, 5, 8, which approximate the <a href="https://en.wikipedia.org/wiki/Golden_ratio">Golden ratio</a>, is used for the heading sizes.  Other ratios can be considered, but the Golden ratio is widely considered pleasing, likely due to its wide occurance in nature.  It is also often mimicked in architecture.</p>
     </section>
 
     <section id="syncopations">
@@ -95,13 +108,13 @@
       <h2>Responsiveness & fluidity</h2>
       <aside><code>aside</code> appear on the margin, or inline, depending on screen width.  But always obeying vertical rhythm.</aside>
       <p><em>Responsive</em> web design shows, hides, or otherwise reshuffles content according to screen size.  Notice the responsive behaviour of the <code>aside</code> tag as you resize your browser width.</p>
-      <p><em>Fluidity</em> is a lesser used technique that additionally changes font sizes based on screen size.  It exploits the fact that users generally hold smaller screens closer, and don't need as large fonts.  <em>Fluidity</em> smooths out the differences between similar screen sizes, ensuring more consistent <em>measure</em> and thus design.</p>
+      <p><em>Fluidity</em> is a lesser used technique that additionally changes element sizes based on screen size.  It exploits the fact that users generally hold smaller screens closer, and don't need as large elements.  <em>Fluidity</em> smooths out the differences between similar screen sizes, ensuring more consistent <em>measure</em> and thus design.</p>
       <p>A <em>measure</em> of 49 to 75 characters per line is generally desirable, with 66 characters per line ideal.  <em>Fluidity</em> ensures that on large screens, text width is capped to ensure a good maximum <em>measure</em>; and on small screens, the reduced root font size ensures that the minimum <em>measure</em> is kept for as long as possible.  Ultimately on very small screens, the desired minimum <em>measure</em> is unattainable, and we resort to just keeping a decent font size.</p>
     </section>
 
     <section id="caveats">
       <h2>Caveats</h2>
-      <p>Ultimately HTML and CSS, is not InDesign or Quark.  We lack the fine control that those programs offer.  With a few hacks with baselines and padding, we've already achieved a fair amount.  But there are some more elements that don't quite work.</p>
+      <p>Ultimately HTML and CSS, is not InDesign or QuarkXPress.  We lack the fine control that those programs offer.  With a few hacks with baselines and padding, we've already achieved a fair amount.  But there are some more elements that don't quite work.</p>
 
       <h3>Images & other media</h3>
       <aside>Use <em>art direction</em> to scale images according to screen size, but that's a different topic.</aside>
@@ -210,5 +223,5 @@ Long lines don't wrap, and we get browser native horizontal scrollbars, mixed in
       baseliner.toggle();
     }
   </script>
-
-@@include('./includes/foot.html')
+</body>
+</html>
