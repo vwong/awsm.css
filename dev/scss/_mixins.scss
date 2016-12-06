@@ -30,13 +30,12 @@
 	display: inline-block;
 	width: auto;
 	background: color('border');
-	color: color('headers');
+	color: color('accent');
 	cursor: pointer;
 
 	&:focus, &:hover {
 		border: 1px solid darken(color('border'), 50);
 		background: darken(color('border'), 15);
-		color: color('accent');
 	}
 }
 

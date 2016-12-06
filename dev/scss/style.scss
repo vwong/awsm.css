@@ -116,7 +116,7 @@ h1 {
 	font-size: 4em;
 	font-weight: normal;
 	line-height: $baseline*3;
-	color: color('accent');
+	color: color('headers');
 }
 
 h2 {
@@ -140,7 +140,7 @@ h4 {
 	font-size: 1em;
 	font-weight: bold;
 	line-height: $baseline;
-	color: darken(color('disabled'), 10);
+	color: lighten(color('headers'), 10);
 }
 
 form {

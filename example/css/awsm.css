@@ -83,7 +83,7 @@ h1{
   font-size:4em;
   font-weight:normal;
   line-height:4.2rem;
-  color:#070600; }
+  color:#25291c; }
 
 h2{
   padding:0.196rem 0 1.204rem;
@@ -104,7 +104,7 @@ h4{
   font-size:1em;
   font-weight:bold;
   line-height:1.4rem;
-  color:#63635e; }
+  color:#404731; }
 
 form{
   max-width:25.6rem;
@@ -137,12 +137,11 @@ button{
   display:inline-block;
   width:auto;
   background:#e8e8e8;
-  color:#25291c;
+  color:#070600;
   cursor:pointer; }
   button:focus, button:hover{
     border:1px solid dimgray;
-    background:#c2c2c2;
-    color:#070600; }
+    background:#c2c2c2; }
 
 select{
   outline:none;
@@ -159,13 +158,12 @@ select{
   display:inline-block;
   width:auto;
   background:#e8e8e8;
-  color:#25291c;
+  color:#070600;
   cursor:pointer;
   display:block; }
   select:focus, select:hover{
     border:1px solid dimgray;
-    background:#c2c2c2;
-    color:#070600; }
+    background:#c2c2c2; }
 
 input[type=text], input[type=password], input[type^=date], input[type=email], input[type=number], input[type=search], input[type=tel], input[type=time], input[type=month], input[type=week], input[type=url]{
   outline:none;
@@ -200,15 +198,14 @@ input[type=submit], input[type=button], input[type=reset]{
   display:inline-block;
   width:auto;
   background:#e8e8e8;
-  color:#25291c;
+  color:#070600;
   cursor:pointer;
   -webkit-appearance:none;
      -moz-appearance:none;
           appearance:none; }
   input[type=submit]:focus, input[type=submit]:hover, input[type=button]:focus, input[type=button]:hover, input[type=reset]:focus, input[type=reset]:hover{
     border:1px solid dimgray;
-    background:#c2c2c2;
-    color:#070600; }
+    background:#c2c2c2; }
 
 input[type=color], input[type=file]{
   outline:none;
@@ -225,13 +222,12 @@ input[type=color], input[type=file]{
   display:inline-block;
   width:auto;
   background:#e8e8e8;
-  color:#25291c;
+  color:#070600;
   cursor:pointer;
   display:block; }
   input[type=color]:focus, input[type=color]:hover, input[type=file]:focus, input[type=file]:hover{
     border:1px solid dimgray;
-    background:#c2c2c2;
-    color:#070600; }
+    background:#c2c2c2; }
 
 input[type=color]{
   width:4em; }
